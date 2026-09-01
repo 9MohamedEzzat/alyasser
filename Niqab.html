@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script data-lang-boot>
+(function () {
+  try {
+    var match = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    var saved = localStorage.getItem('alyasser_lang') || (match && match[1]) || 'ar';
+    saved = saved === 'en' ? 'en' : 'ar';
+    document.documentElement.lang = saved;
+    document.documentElement.dir = saved === 'en' ? 'ltr' : 'rtl';
+  } catch (e) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+  }
+}());
+</script>
+<title data-ar="نقاب | ALYASSER" data-en="Niqab | ALYASSER">نقاب | ALYASSER</title>
+<script>
+(function () {
+  var saved = 'ar';
+  try {
+    var c = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    saved = localStorage.getItem('alyasser_lang') || (c && c[1]) || 'ar';
+  } catch (e) {}
+  saved = saved === 'en' ? 'en' : 'ar';
+  var t = document.querySelector('title');
+  document.title = saved === 'en' ? t.getAttribute('data-en') : t.getAttribute('data-ar');
+}());
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<link rel="icon" type="image/webp" href="assets/img/loge.webp">
+<link rel="apple-touch-icon" href="assets/img/loge.webp">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="promo-bar" data-ar="لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط" data-en="Limited time: Up to 20% off for 3 days only">
+    لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط
+</div>
+<div class="spacer-bar"></div>
+<header class="main-header">
+    <div class="header-inner">
+        <button class="menu-toggle" id="menuOpenBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <a class="logo-center" href="index.html">
+            <img src="assets/img/loge.webp" alt="logo">
+        </a>
+        <div class="header-icons">
+            <button class="icon-btn" id="searchOpenBtn"><i class="ph ph-magnifying-glass"></i></button>
+            <a class="icon-btn" href="wishlist.html">
+                <i class="ph ph-heart"></i>
+                <span class="icon-count wishlist-count">0</span>
+            </a>
+            <button class="icon-btn" id="cartOpenBtn" aria-label="Open cart"><i class="ph ph-shopping-cart-simple"></i><span class="icon-count cart-count">0</span></button>
+        </div>
+    </div>
+</header>
+<!-- ================= COLLECTION ================= -->
+<main class="best-seller-page">
+    <section class="best-seller-heading">
+        <div class="best-seller-dress-link-wrap">
+            <a class="best-seller-dress-link" href="Dress.html" data-ar="فساتين" data-en="Dress">Dress</a>
+        </div>
+        <p class="best-seller-breadcrumb"><a href="index.html" data-ar="الرئيسية" data-en="Home">Home</a> <span aria-hidden="true">&gt;</span> <span data-ar="نقاب" data-en="Niqab">Niqab</span></p>
+    </section>
+<section class="best-seller-products" aria-label="Products"></section>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" dir="ltr">
+    <div class="footer-container">
+        <!-- Logo & About -->
+        <div class="footer-brand">
+            <img src="assets/img/loge 2.webp"
+                class="footer-logo"
+            >
+            <p class="footer-description">
+                <span class="lang-en">
+                    Al Yasser Fashion Factory offers elegant abayas and dresses with
+                    high quality, stylish designs, and a smooth shopping experience
+                    with great customer service.
+                </span>
+                <span class="lang-ar">
+                    مصنع الياسر للأزياء يقدم عبايات وفساتين أنيقة
+                    بجودة عالية وتصاميم عصرية وتجربة تسوق سهلة
+                    مع خدمة عملاء مميزة.
+                </span>
+            </p>
+            <!-- Social Media -->
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">
+                    <i class="ph ph-facebook-logo"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="ph ph-youtube-logo"></i>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <i class="ph ph-tiktok-logo"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Categories -->
+        <div class="footer-column">
+            <h3>
+                <span class="lang-en">Categories</span>
+                <span class="lang-ar">التصنيفات</span>
+            </h3>
+            <ul>
+                <li>
+                    <a href="RamadanKaftans2026.html">
+                        <span class="lang-en">Ramadan Kaftans 2026</span>
+                        <span class="lang-ar">قفاطين رمضان 2026</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Denim2026.html">
+                        <span class="lang-en">Denim 2026</span>
+                        <span class="lang-ar">دينم 2026</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="UmrahAbaya.html">
+                        <span class="lang-en">Hajj abayas</span>
+                        <span class="lang-ar">عبايات الحج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Information -->
+        <div class="footer-column">
+            <h3>
+                <span class="lang-en">Information</span>
+                <span class="lang-ar">المعلومات</span>
+            </h3>
+            <ul>
+                <li>
+<a href="Returns.html">
+<span class="lang-en">Returns</span>
+<span class="lang-ar">الإرجاع</span>
+</a>
+</li>
+                <li>
+<a href="Privacy.html">
+<span class="lang-en">Privacy</span>
+<span class="lang-ar">الخصوصية</span>
+</a>
+</li>
+                <li>
+<a href="TermsOfService.html">
+<span class="lang-en">Terms of Service</span>
+<span class="lang-ar">شروط الخدمة</span>
+</a>
+</li>
+                <li>
+                    <a href="ContactUs.html">
+                        <span class="lang-en">Contact Us</span>
+                        <span class="lang-ar">تواصل معنا</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <h3>
+                <span class="lang-en">Newsletter Signup</span>
+                <span class="lang-ar">الاشتراك في النشرة البريدية</span>
+            </h3>
+            <p>
+                <span class="lang-en">
+                    Subscribe to our newsletter and get 10% off
+                    your first purchase
+                </span>
+                <span class="lang-ar">
+                    اشترك في النشرة البريدية واحصل على خصم 10%
+                    على أول طلب لك.
+                </span>
+            </p>
+            <form class="newsletter-form">
+                <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                >
+                <button type="submit" aria-label="Subscribe">
+                    <i class="ph ph-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</footer>
+<div class="overlay" id="overlay"></div>
+<div class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+        <button class="side-menu-close" id="menuCloseBtn">&times;</button>
+    </div>
+    <ul class="side-menu-list">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="BestSeller.html" data-ar="الأكثر مبيعاً" data-en="Best Seller">الأكثر مبيعاً</a></li>
+        <li><a href="NewProducts.html" data-ar="وصل حديثاً" data-en="New Arrival">وصل حديثاً</a></li>
+        <li><a href="Sale.html" data-ar="التخفيضات" data-en="Sale">التخفيضات</a></li>
+        <li class="has-submenu">
+            <div class="submenu-row">
+                <a href="#" data-ar="تشكيلة الموسم" data-en="Season Collection">تشكيلة الموسم</a>
+                <button class="submenu-toggle" aria-expanded="false">+</button>
+            </div>
+            <ul class="side-submenu">
+                <li><a href="RamadanKaftans2026.html" data-ar="قفاطين رمضان 2026" data-en="Ramadan Kaftans 2026">قفاطين رمضان 2026</a></li>
+                <li><a href="Summer2026.html" data-ar="تشكيلة الصيف 2026" data-en="Summer 2026">تشكيلة الصيف 2026</a></li>
+                <li><a href="Denim2026.html" data-ar="دنيم 2026" data-en="Denim 2026">دنيم 2026</a></li>
+                <li><a href="UmrahAbaya.html" data-ar="عبايات الحج" data-en="Hajj Abayas">عبايات الحج</a></li>
+            </ul>
+        </li>
+        <li class="has-submenu">
+            <div class="submenu-row">
+                <a href="#" data-ar="كل التشكيلات" data-en="All Collection">كل التشكيلات</a>
+                <button class="submenu-toggle" aria-expanded="false">+</button>
+            </div>
+            <ul class="side-submenu">
+                <li><a href="UmrahAbaya.html" data-ar="عبايات الحج" data-en="Hajj Abayas">عبايات الحج</a></li>
+                <li><a href="Abaya.html" data-ar="عباية" data-en="Abaya">Abaya</a></li>
+                <li><a href="Niqab.html" data-ar="نقاب" data-en="Niqab">Niqab</a></li>
+                <li><a href="Denim2026.html" data-ar="دنيم 2026" data-en="Denim 2026">Denim 2026</a></li>
+                <li><a href="Winter2025-2026.html" data-ar="شتاء 2025-2026" data-en="Winter 2025-2026">Winter 2025-2026</a></li>
+            </ul>
+        </li>
+        <li><a href="Winter2025-2026.html?view=collection" data-ar="تشكيلة الشتاء" data-en="Winter Collection">تشكيلة الشتاء</a></li>
+        <li><a href="ContactUs.html" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+        <li><a href="OurBranches.html" data-ar="فروعنا" data-en="Our Branches">فروعنا</a></li>
+    </ul>
+    <div class="side-social">
+        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+    </div>
+    <button id="langToggle" class="lang-toggle-side">EN</button>
+</div>
+<!-- ================= SEARCH ================= -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="search-close" id="searchCloseBtn">&times;</button>
+        <div class="category-select-wrap">
+            <select id="categorySelect" class="category-select">
+                <option value="all" data-ar="كل التصنيفات" data-en="All Categories">All Categories</option>
+                <option value="abaya" data-ar="عباية" data-en="Abaya">Abaya</option>
+                <option value="chemise" data-ar="شيميز" data-en="Chemise">Chemise</option>
+                <option value="black-pants" data-ar="بنطلون اسود" data-en="Black Pants">بنطلون اسود</option>
+            </select>
+        </div>
+        <div class="search-input-wrap">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="searchInput"
+                placeholder="ابحث عن منتج..."
+                data-ar-placeholder="ابحث عن منتج..."
+                data-en-placeholder="Search for a product...">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+<!-- ================= QUICK SHOP MODAL ================= -->
+<div class="quick-shop-overlay" id="quickShopOverlay" aria-hidden="true">
+    <div class="quick-shop-modal" role="dialog" aria-modal="true" aria-labelledby="quickShopName">
+        <button class="quick-shop-close" id="quickShopCloseBtn" aria-label="Close">&times;</button>
+        <div class="quick-shop-content">
+            <div class="quick-shop-image-wrap"><img id="quickShopImage" src="" alt=""></div>
+            <div class="quick-shop-details">
+                <h2 id="quickShopName"></h2>
+                <p id="quickShopPrice" class="quick-shop-price"></p>
+                <div class="quick-shop-label" data-ar="اللون: أسود" data-en="COLOR: BLACK">COLOR: BLACK</div>
+                <div class="quick-shop-thumb"><img id="quickShopThumb" src="" alt=""></div>
+                <div class="quick-shop-label" data-ar="المقاس: 44" data-en="SIZE: 44">SIZE: 44</div>
+                <div class="size-options" id="quickShopSizes">
+                    <button class="size-option active">44</button><button class="size-option">46</button><button class="size-option">48</button><button class="size-option">52</button><button class="size-option">54</button><button class="size-option">56</button>
+                </div>
+                <div class="quick-shop-actions"><div class="quantity-control"><button id="quickQtyMinus">−</button><span id="quickQty">1</span><button id="quickQtyPlus">+</button></div><button class="quick-wishlist" type="button" aria-label="Add to wishlist" aria-pressed="false" data-tooltip="Add to Wishlist"><svg class="quick-heart-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg></button></div>
+                <button class="quick-add-btn" id="quickAddBtn" data-ar="إضافة إلى السلة" data-en="ADD TO CART">ADD TO CART</button>
+                <button class="quick-buy-btn" id="quickBuyBtn" data-ar="اشتري الآن" data-en="BUY IT NOW">BUY IT NOW</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================= CART DRAWER ================= -->
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header"><h2 data-ar="سلة التسوق" data-en="Shopping Cart">Shopping Cart</h2><button id="cartCloseBtn" aria-label="Close">&times;</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><i class="ph ph-shopping-cart-simple"></i><p data-ar="السلة فارغة" data-en="Your cart is empty.">Your cart is empty.</p><button id="returnShopBtn" data-ar="العودة للتسوق" data-en="RETURN TO SHOP">RETURN TO SHOP</button></div>
+    <div class="cart-footer" id="cartFooter"><div><span data-ar="الإجمالي الفرعي" data-en="Subtotal">Subtotal</span><strong id="cartSubtotal">0.00 LE</strong></div><button class="cart-view-btn" data-ar="عرض السلة" data-en="VIEW CART">VIEW CART</button><button class="cart-checkout-btn" data-ar="إتمام الشراء" data-en="CHECK OUT">CHECK OUT</button></div>
+</aside>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

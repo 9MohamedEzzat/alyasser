@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style id="lang-loading-style">html.lang-loading{visibility:hidden}</style>
+<script data-lang-boot>
+(function () {
+  try {
+    var match = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    var saved = localStorage.getItem('alyasser_lang') || (match && match[1]) || 'ar';
+    saved = saved === 'en' ? 'en' : 'ar';
+    document.documentElement.lang = saved;
+    document.documentElement.dir = saved === 'en' ? 'ltr' : 'rtl';
+  } catch (e) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+  }
+  // نخفي الصفحة فورًا لحد ما script.js (آخر الصفحة) يخلص applyLanguage()
+  // ويوحد كل النصوص المتضاربة (بعضها متكتوب افتراضيًا عربي وبعضها إنجليزي).
+  // ده اللي بيمنع فلاشة النص الغلط عند كل ريفريش.
+  document.documentElement.classList.add('lang-loading');
+  // شبكة أمان: لو script.js فشل يتحمل أو حصل فيه error، منسيبش الموقع مخفي للأبد
+  setTimeout(function () {
+    document.documentElement.classList.remove('lang-loading');
+  }, 2000);
+}());
+</script>
+<title data-ar="الرئيسية | ALYASSER" data-en="Home | ALYASSER">الرئيسية | ALYASSER</title>
+<script>
+(function () {
+  var saved = 'ar';
+  try {
+    var c = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    saved = localStorage.getItem('alyasser_lang') || (c && c[1]) || 'ar';
+  } catch (e) {}
+  saved = saved === 'en' ? 'en' : 'ar';
+  document.title = saved === 'en' ? (document.querySelector('title').getAttribute('data-en')) : (document.querySelector('title').getAttribute('data-ar'));
+}());
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<link rel="icon" type="image/webp" href="assets/img/loge.webp">
+<link rel="apple-touch-icon" href="assets/img/loge.webp">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home-page">
+<div class="promo-bar" data-ar="لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط" data-en="Limited time: Up to 20% off for 3 days only">
+    لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط
+</div>
+<div class="spacer-bar"></div>
+<header class="main-header">
+    <div class="header-inner">
+        <button class="menu-toggle" id="menuOpenBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <a class="logo-center" href="index.html">
+            <img src="assets/img/loge.webp" alt="logo">
+        </a>
+        <div class="header-icons">
+            <button class="icon-btn" id="searchOpenBtn"><i class="ph ph-magnifying-glass"></i></button>
+            <a class="icon-btn" href="wishlist.html">
+                <i class="ph ph-heart"></i>
+                <span class="icon-count wishlist-count">0</span>
+            </a>
+            <button class="icon-btn" id="cartOpenBtn" aria-label="Open cart"><i class="ph ph-shopping-cart-simple"></i><span class="icon-count cart-count">0</span></button>
+        </div>
+    </div>
+</header>
+<section class="hero-section">
+    <picture>
+  <source media="(min-width: 768px)" srcset="assets/img/IMG-3772.jpg">
+  <img src="assets/img/IMG-3772 (2).jpg" alt="hero" class="hero-img">
+</picture>
+    <div class="hero-content">
+        <a class="hero-reference-btn" href="collections.html" data-ar="أناقة متكاملة" data-en="Complete elegance">أناقة متكاملة</a>
+    </div>
+</section>
+<section class="season-section">
+    <h2 class="season-title" data-ar="تشكيلة الموسم" data-en="Season Collection">تشكيلة الموسم</h2>
+    <div class="season-grid">
+        <div class="season-item">
+            <a href="Summer2026.html" class="season-card-link">
+                <img src="assets/img/1.jpg" alt="Summer Collection">
+                <span class="season-label" data-ar="تشكيلة الصيف" data-en="Summer Collection">تشكيلة الصيف</span>
+            </a>
+        </div>
+        <div class="season-item">
+            <a href="Denim2026.html" class="season-card-link">
+                <img src="assets/img/2.jpg" alt="Denim 2026">
+                <span class="season-label" data-ar="دنيم 2026" data-en="Denim 2026">دنيم 2026</span>
+            </a>
+        </div>
+        <div class="season-item">
+            <a href="RamadanKaftans2026.html" class="season-card-link">
+                <img src="assets/img/3.jpg" alt="Ramadan Kaftans">
+                <span class="season-label" data-ar="قفاطين رمضان" data-en="Ramadan Kaftans">قفاطين رمضان</span>
+            </a>
+        </div>
+        <div class="season-item">
+            <a href="UmrahAbaya.html" class="season-card-link">
+                <img src="assets/img/4.jpg" alt="Hajj Abayas">
+                <span class="season-label" data-ar="عبايات الحج" data-en="Hajj Abayas">عبايات الحج</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section" id="bestsellers">
+    <h2 class="bestsellers-title" data-ar="الأكثر مبيعاً" data-en="Best Sellers">الأكثر مبيعاً</h2>
+    <a href="BestSeller.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="SulafCrepeAbaya.html" class="product-image-link" aria-label="Open Sulaf Crepe Abaya">
+                    <img src="assets/img/1.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/1.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية سولاف كريب" data-en="Sulaf Crepe Abaya">عباية سولاف كريب</p>
+            <p class="product-price" data-ar="من 1,575.00 ج.م" data-en="1,575.00 LE">من 1,575.00 ج.م</p>
+        </div>
+        <div class="product-card anan-sale-card">
+            <div class="product-img-wrap">
+                <a href="AnanCrepeAbaya.html" class="product-image-link" aria-label="Open Anan Crepe Abaya">
+                    <span class="product-sale-badge" data-ar="-11%" data-en="-11%">-11%</span>
+                    <img src="assets/img/an1.webp" class="product-img img-front" alt="Anan Crepe Abaya">
+                    <img src="assets/img/an2.webp" class="product-img img-back" alt="Anan Crepe Abaya">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية عنان كريب" data-en="Anan Crepe Abaya">عباية عنان كريب</p>
+            <p class="product-price anan-card-price" data-old-price="1575" data-ar="1,400.00 ج.م" data-en="1,400.00 LE"><del>1,575.00</del><strong>1,400.00 LE</strong></p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="SuhailaCrepeAbaya.html" class="product-image-link" aria-label="Open Suhaila Crepe Abaya"><img src="assets/img/so1.webp" class="product-img img-front" alt="product">
+                <img src="assets/img/so2.webp" class="product-img img-back" alt="product"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية سهيلة كريب" data-en="Suhaila Crepe Abaya">عباية سهيلة كريب</p>
+            <p class="product-price" data-ar="من 1,575.00 ج.م" data-en="1,575.00 LE">من 1,575.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="LaylCrepeAbaya.html" class="product-image-link" aria-label="Open Layl Crepe Abaya">
+                    <img src="assets/img/la1.webp" class="product-img img-front" alt="Layl Crepe Abaya">
+                    <img src="assets/img/la2.webp" class="product-img img-back" alt="Layl Crepe Abaya">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية ليل كريب" data-en="Layl Crepe Abaya">عباية ليل كريب</p>
+            <p class="product-price" data-ar="1,575.00 ج.م" data-en="1,575.00 LE">1,575.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="AseelCrepeAbaya.html" class="product-image-link" aria-label="Open Aseel Crepe Abaya">
+                    <img src="assets/img/as1.webp" class="product-img img-front" alt="Aseel Crepe Abaya">
+                    <img src="assets/img/as5.webp" class="product-img img-back" alt="Aseel Crepe Abaya">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية أسيل كريب" data-en="Aseel Crepe Abaya">عباية أسيل كريب</p>
+            <p class="product-price" data-ar="1,575.00 ج.م" data-en="1,575.00 LE">1,575.00 ج.م</p>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <h2 class="bestsellers-title" data-ar="وصل حديثاً" data-en="New Arrival">وصل حديثاً</h2>
+    <a href="NewProducts.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="ShortBasicShirt.html"><img src="assets/img/sh1.webp" class="product-img img-front" alt="Short Basic Shirt">
+                <img src="assets/img/sh2.webp" class="product-img img-back" alt="Short Basic Shirt"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="ShortBasicShirt.html" class="product-name-link"><p class="product-name" data-ar="بيزك شيرت قصير" data-en="Short Basic Shirt">بيزك شيرت قصير</p></a>
+            <p class="product-price" data-ar="800.00 ج.م" data-en="800.00 LE">800.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-color:#1a1a1a">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-color:#ffffff">
+                    <span class="swatch-tooltip" data-ar="أبيض" data-en="White">أبيض</span>
+                </button>
+                
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Raya.html"><img src="assets/img/7.1.webp" class="product-img img-front" alt="Raya">
+                <img src="assets/img/7.2.webp" class="product-img img-back" alt="Raya"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="Raya.html" class="product-name-link"><p class="product-name" data-ar="رايا" data-en="Raya">رايا</p></a>
+            <p class="product-price" data-ar="1,600.00 ج.م" data-en="1,600.00 LE">1,600.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-color:#e3d5bc">
+                    <span class="swatch-tooltip" data-ar="بيج" data-en="Beige">بيج</span>
+                </button>
+                
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="LongBasicTShirt.html"><img src="assets/img/8.1.webp" class="product-img img-front" alt="Long Basic T Shirt">
+                <img src="assets/img/8.2.webp" class="product-img img-back" alt="Long Basic T Shirt"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="LongBasicTShirt.html" class="product-name-link"><p class="product-name" data-ar="بيزك شيرت طويل" data-en="Long Basic T Shirt">بيزك شيرت طويل</p></a>
+            <p class="product-price" data-ar="800.00 ج.م" data-en="800.00 LE">800.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-color:#1a1a1a">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-color:#ffffff">
+                    <span class="swatch-tooltip" data-ar="أبيض" data-en="White">أبيض</span>
+                </button>
+                
+            </div>
+        </div>
+        <div class="product-card is-on-sale">
+            <div class="product-img-wrap">
+                <a href="Zolfi.html"><span class="product-sale-badge" data-ar="-10%" data-en="-10%">-10%</span>
+                <img src="assets/img/9.1.webp" class="product-img img-front" alt="Zolfi">
+                <img src="assets/img/9.2.webp" class="product-img img-back" alt="Zolfi"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="Zolfi.html" class="product-name-link"><p class="product-name" data-ar="زلفي" data-en="Zolfi">زلفي</p></a>
+            <p class="product-price anan-card-price" data-old-price="1650" data-ar="1,485.00 ج.م" data-en="1,485.00 LE"><del>1,650.00</del><strong>1,485.00 LE</strong></p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-color:#1a1a1a">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-color:#7a5230">
+                    <span class="swatch-tooltip" data-ar="بني" data-en="Brown">بني</span>
+                </button>
+                
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="HighLowBasicShirt.html"><img src="assets/img/10.1.webp" class="product-img img-front" alt="High Low Basic Shirt">
+                <img src="assets/img/10.2.webp" class="product-img img-back" alt="High Low Basic Shirt"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="HighLowBasicShirt.html" class="product-name-link"><p class="product-name" data-ar="بيزك شيرت طويل" data-en="High Low Basic Shirt">بيزك شيرت طويل</p></a>
+            <p class="product-price" data-ar="850.00 ج.م" data-en="850.00 LE">850.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-color:#1a1a1a">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-color:#ffffff">
+                    <span class="swatch-tooltip" data-ar="أبيض" data-en="White">أبيض</span>
+                </button>
+                <button class="swatch swatch-c" style="background-color:#7a5230">
+                    <span class="swatch-tooltip" data-ar="بني" data-en="Brown">بني</span>
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <h2 class="bestsellers-title" data-ar="عبايات العمرة" data-en="Umrah Abayas">عبايات العمرة</h2>
+    <a href="UmrahAbaya.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="SulafCrepeAbaya.html" class="product-image-link" aria-label="Open Sulaf Crepe Abaya">
+                    <img src="assets/img/1.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/1.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية سولاف كريب" data-en="Sulaf Crepe Abaya">عباية سولاف كريب</p>
+            <p class="product-price" data-ar="من 1,575.00 ج.م" data-en="1,575.00 LE">من 1,575.00 ج.م</p>
+        </div>
+        <div class="product-card anan-sale-card is-on-sale">
+            <div class="product-img-wrap">
+                <a href="AnanCrepeAbaya.html" class="product-image-link" aria-label="Open Anan Crepe Abaya">
+                    <span class="product-sale-badge" data-ar="-11%" data-en="-11%">-11%</span>
+                    <img src="assets/img/an1.webp" class="product-img img-front" alt="Anan Crepe Abaya">
+                    <img src="assets/img/an2.webp" class="product-img img-back" alt="Anan Crepe Abaya">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية عنان كريب" data-en="Anan Crepe Abaya">عباية عنان كريب</p>
+            <p class="product-price anan-card-price" data-old-price="1575" data-ar="1,400.00 ج.م" data-en="1,400.00 LE"><del>1,575.00</del><strong>1,400.00 LE</strong></p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="LaylCrepeAbaya.html" class="product-image-link" aria-label="Open Layl Crepe Abaya">
+                    <img src="assets/img/la1.webp" class="product-img img-front" alt="Layl Crepe Abaya">
+                    <img src="assets/img/la2.webp" class="product-img img-back" alt="Layl Crepe Abaya">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية ليل كريب" data-en="Layl Crepe Abaya">عباية ليل كريب</p>
+            <p class="product-price" data-ar="1,575.00 ج.م" data-en="1,575.00 LE">1,575.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="SuhailaCrepeAbaya.html" class="product-image-link" aria-label="Open Suhaila Crepe Abaya"><img src="assets/img/so1.webp" class="product-img img-front" alt="product">
+                <img src="assets/img/so2.webp" class="product-img img-back" alt="product"></a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="عباية سهيلة كريب" data-en="Suhaila Crepe Abaya">عباية سهيلة كريب</p>
+            <p class="product-price" data-ar="من 1,575.00 ج.م" data-en="1,575.00 LE">من 1,575.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="ShoroukCrepeAbaya.html" class="product-image-link" aria-label="Open Shorouk Crepe Abaya">
+                    <img src="assets/img/11.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/11.1.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <a href="ShoroukCrepeAbaya.html" class="product-name-link"><p class="product-name" data-ar="عباية شروق كريب" data-en="Shorouk Crepe Abaya">عباية شروق كريب</p></a>
+            <p class="product-price" data-ar="1,650.00 ج.م" data-en="1,650.00 LE">1,650.00 ج.م</p>
+        </div>
+    </div>
+</section>
+<section class="style-choice-section">
+    <h2 class="style-choice-title" data-ar="ستايل من اختيارك" data-en="Style of your choice">ستايل من اختيارك</h2>
+    <div class="style-choice-grid">
+        <div class="style-choice-card" data-milana-preview-card>
+            <video class="style-choice-media" src="assets/img/vido.1.mp4" poster="assets/img/v.1.webp" muted loop playsinline autoplay></video>
+            <div class="style-choice-info">
+                <img src="assets/img/v.1.webp" class="style-choice-avatar" alt="avatar">
+                <div class="style-choice-text">
+                    <span class="style-choice-name" data-ar="دريس ميلانا جينز" data-en="Milana Denim Dress">دريس ميلانا جينز</span>
+                    <span class="style-choice-price" data-ar="1,950.00 ج.م" data-en="1,950.00 LE">1,950.00 ج.م</span>
+                </div>
+                <button class="style-choice-view" type="button" aria-label="فتح معاينة دريس ميلانا جينز" data-ar-label="فتح معاينة دريس ميلانا جينز" data-en-label="Open Milana Denim Dress preview"><i class="ph ph-eye"></i></button>
+            </div>
+        </div>
+        <div class="style-choice-card" data-toba-preview-card>
+            <video class="style-choice-media" src="assets/img/vido.2.mp4" poster="assets/img/v.2.webp" muted loop playsinline autoplay></video>
+            <div class="style-choice-info">
+                <img src="assets/img/v.2.webp" class="style-choice-avatar" alt="avatar">
+                <div class="style-choice-text">
+                    <span class="style-choice-name" data-ar="عباية توبا كريب" data-en="Toba Crepe Abaya">عباية توبا كريب</span>
+                    <span class="style-choice-price" data-ar="1,675.00 ج.م" data-en="1,675.00 LE">1,675.00 ج.م</span>
+                </div>
+                                <button class="style-choice-view" type="button" aria-label="فتح معاينة عباية توبا كريب" data-ar-label="فتح معاينة عباية توبا كريب" data-en-label="Open Toba Crepe Abaya preview"><i class="ph ph-eye"></i></button>
+            </div>
+        </div>
+        <div class="style-choice-card" data-toba-preview-card>
+            <video class="style-choice-media" src="assets/img/vido.3.mp4" poster="assets/img/v.3.webp" muted loop playsinline autoplay></video>
+            <div class="style-choice-info">
+                <img src="assets/img/v.3.webp" class="style-choice-avatar" alt="avatar">
+                <div class="style-choice-text">
+                    <span class="style-choice-name" data-ar="عباية توبا كريب" data-en="Toba Crepe Abaya">عباية توبا كريب</span>
+                    <span class="style-choice-price" data-ar="1,675.00 ج.م" data-en="1,675.00 LE">1,675.00 ج.م</span>
+                </div>
+                <button class="style-choice-view"><i class="ph ph-eye"></i></button>
+            </div>
+        </div>
+        </div>
+    <div class="toba-preview-overlay" id="tobaPreviewOverlay" aria-hidden="true">
+        <div class="toba-preview-modal" role="dialog" aria-modal="true" aria-labelledby="tobaPreviewName">
+            <button class="toba-preview-close" id="tobaPreviewClose" type="button" aria-label="Close">&times;</button>
+            <div class="toba-preview-content">
+                <div class="toba-preview-media-wrap">
+                    <div class="toba-preview-media" id="tobaPreviewMedia"></div>
+                    <button class="toba-preview-arrow toba-preview-prev" id="tobaPreviewPrev" type="button" aria-label="Previous media">‹</button>
+                    <button class="toba-preview-arrow toba-preview-next" id="tobaPreviewNext" type="button" aria-label="Next media">›</button>
+                </div>
+                <div class="toba-preview-details">
+                    <h2 id="tobaPreviewName" data-ar="عباية توبا كريب" data-en="Toba Crepe Abaya">عباية توبا كريب</h2>
+                    <p class="toba-preview-price" data-ar="1,675.00 ج.م" data-en="1,675.00 LE">1,675.00 ج.م</p>
+                    <div class="toba-preview-label" data-ar="اللون: أسود" data-en="COLOR: BLACK">اللون: أسود</div>
+                    <button class="toba-preview-color" id="tobaPreviewColor" type="button" aria-label="Black" title="Black"></button>
+                    <div class="toba-preview-label" data-ar="المقاس: 50" data-en="SIZE: 50">المقاس: 50</div>
+                    <div class="toba-preview-sizes" id="tobaPreviewSizes">
+                        <button type="button" class="toba-preview-size active">50</button>
+                        <button type="button" class="toba-preview-size">52</button>
+                        <button type="button" class="toba-preview-size">54</button>
+                        <button type="button" class="toba-preview-size">56</button>
+                        <button type="button" class="toba-preview-size">58</button>
+                        <button type="button" class="toba-preview-size">60</button>
+                    </div>
+                    <div class="toba-preview-actions">
+                        <div class="toba-preview-quantity"><button type="button" id="tobaPreviewMinus">−</button><span id="tobaPreviewQty">1</span><button type="button" id="tobaPreviewPlus">+</button></div>
+                        <button class="toba-preview-add" id="tobaPreviewAdd" type="button" data-ar="إضافة إلى السلة" data-en="ADD TO CART">إضافة إلى السلة</button>
+                        <button class="toba-preview-favorite" id="tobaPreviewFavorite" type="button" aria-pressed="false" aria-label="Add to wishlist" data-ar-label="إضافة إلى المفضلة" data-en-label="Add to wishlist"><i class="ph ph-heart" aria-hidden="true"></i></button>
+                    </div>
+                    <button class="toba-preview-buy" id="tobaPreviewBuy" type="button" data-ar="اشتري الآن" data-en="BUY IT NOW">اشتري الآن</button>
+                    <div class="toba-preview-links">
+                        <button class="toba-preview-link" id="tobaPreviewSizeGuide" type="button" data-ar="دليل المقاسات" data-en="Size Guide">دليل المقاسات</button>
+                        <button class="toba-preview-link" id="tobaPreviewAsk" type="button" data-ar="اسأل سؤالاً" data-en="Ask a Question">اسأل سؤالاً</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toba-size-guide-overlay" id="tobaSizeGuideOverlay" aria-hidden="true">
+        <div class="toba-size-guide-modal" role="dialog" aria-modal="true" aria-labelledby="tobaSizeGuideTitle">
+            <button class="toba-secondary-close" id="tobaSizeGuideClose" type="button" aria-label="Close">&times;</button>
+            <h2 id="tobaSizeGuideTitle" data-ar="دليل المقاسات" data-en="Size Guide">دليل المقاسات</h2>
+            <div class="toba-size-guide-table-wrap">
+                <table class="toba-size-guide-table">
+                    <thead><tr>
+                        <th data-ar="المقاس" data-en="SIZE">المقاس</th>
+                        <th data-ar="يعادل" data-en="EQUIVALENT">يعادل</th>
+                        <th data-ar="نصف محيط الصدر" data-en="HALF CHEST">نصف محيط الصدر</th>
+                        <th data-ar="الوزن" data-en="WEIGHT">الوزن</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr><td>44</td><td>M</td><td>52</td><td>55–64</td></tr>
+                        <tr><td>46</td><td>L</td><td>54</td><td>65–74</td></tr>
+                        <tr><td>48</td><td>XL</td><td>56</td><td>75–84</td></tr>
+                        <tr><td>50</td><td>XXL</td><td>58</td><td>85–90</td></tr>
+                        <tr><td>52</td><td>3XL</td><td>60</td><td>90–95</td></tr>
+                        <tr><td>54</td><td>4XL</td><td>64</td><td>95–100</td></tr>
+                        <tr><td>56</td><td>5XL</td><td>66</td><td>100–110</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="toba-size-guide-note" data-ar="المقاسات الخاصة: 70 و74. الوزن الأقصى 120–130 كجم، والطول أقل من 165 سم يزيد المقاس." data-en="Special sizes: 70 and 74. Maximum weight is 120–130 kg; below 165 cm height, choose one size up.">المقاسات الخاصة: 70 و74. الوزن الأقصى 120–130 كجم، والطول أقل من 165 سم يزيد المقاس.</p>
+        </div>
+    </div>
+    <div class="toba-question-overlay" id="tobaQuestionOverlay" aria-hidden="true">
+        <div class="toba-question-modal" role="dialog" aria-modal="true" aria-labelledby="tobaQuestionTitle">
+            <button class="toba-secondary-close" id="tobaQuestionClose" type="button" aria-label="Close">&times;</button>
+            <div class="toba-question-product"><img src="assets/img/v.2.webp" alt="Toba Crepe Abaya"><div><strong data-ar="عباية توبا كريب" data-en="Toba Crepe Abaya">عباية توبا كريب</strong><span data-ar="1,675.00 ج.م" data-en="1,675.00 LE">1,675.00 ج.م</span></div></div>
+            <h2 id="tobaQuestionTitle" data-ar="اسأل سؤالاً" data-en="Ask a Question">اسأل سؤالاً</h2>
+            <form id="tobaQuestionForm" class="toba-question-form">
+                <label><span data-ar="الاسم (مطلوب)" data-en="Your Name (required)">الاسم (مطلوب)</span><input id="tobaQuestionName" type="text" required data-ar-placeholder="اكتب اسمك" data-en-placeholder="Your name"></label>
+                <label><span data-ar="البريد الإلكتروني (مطلوب)" data-en="Your Email (required)">البريد الإلكتروني (مطلوب)</span><input id="tobaQuestionEmail" type="email" required data-ar-placeholder="اكتب بريدك الإلكتروني" data-en-placeholder="Your email"></label>
+                <label><span data-ar="رقم الهاتف" data-en="Your Phone Number">رقم الهاتف</span><input id="tobaQuestionPhone" type="tel" data-ar-placeholder="اكتب رقم الهاتف" data-en-placeholder="Your phone number"></label>
+                <label><span data-ar="رسالتك (مطلوب)" data-en="Your Message (required)">رسالتك (مطلوب)</span><textarea id="tobaQuestionMessage" required data-ar-placeholder="اكتب سؤالك هنا" data-en-placeholder="Your message"></textarea></label>
+                <button class="toba-question-send" type="submit" data-ar="إرسال" data-en="Send">إرسال</button>
+                <p class="toba-question-success" id="tobaQuestionSuccess" data-ar="تم إرسال سؤالك بنجاح." data-en="Your question was sent successfully." aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <h2 class="bestsellers-title" data-ar="قفاطين رمضان" data-en="Ramadan Kaftans">قفاطين رمضان</h2>
+    <a href="RamadanKaftans2026.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="HourCrepeKaftan.html" class="product-image-link" aria-label="Open Hour Crepe Kaftan">
+                    <img src="assets/img/12.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/12.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="قفطان حور كريب" data-en="Hour Crepe Kaftan">قفطان حور كريب</p>
+            <p class="product-price" data-ar="1,700.00 ج.م" data-en="1,700.00 LE">1,700.00 ج.م</p>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <h2 class="bestsellers-title" data-ar="دنيم 2026" data-en="Denim 2026">دنيم 2026</h2>
+    <a href="Denim2026.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Dinema.html" class="product-image-link" aria-label="Open Dinema">
+                    <img src="assets/img/13.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/13.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="دينما" data-en="Dinema">دينما</p>
+            <p class="product-price" data-ar="1,875.00 ج.م" data-en="1,875.00 LE">1,875.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Nova.html" class="product-image-link" aria-label="Open Nova">
+                    <img src="assets/img/14.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/14.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="نوفا" data-en="Nova">نوفا</p>
+            <p class="product-price" data-ar="1,875.00 ج.م" data-en="1,875.00 LE">1,875.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Ella.html" class="product-image-link" aria-label="Open Ella">
+                    <img src="assets/img/15.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/15.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="ايلا" data-en="Ella">ايلا</p>
+            <p class="product-price" data-ar="1,875.00 ج.م" data-en="1,875.00 LE">1,875.00 ج.م</p>
+        </div>
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="MilanaJeansDress.html" class="product-image-link" aria-label="Open Milana Jeans Dress">
+                    <img src="assets/img/16.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/16.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="دريس ميلانا جينز" data-en="Milana Jeans Dress">دريس ميلانا جينز</p>
+            <p class="product-price" data-ar="1,950.00 ج.م" data-en="1,950.00 LE">1,950.00 ج.م</p>
+        </div>
+        <div class="product-card anan-sale-card is-on-sale">
+            <div class="product-img-wrap">
+                <a href="Joy.html" class="product-image-link" aria-label="Open Joy">
+                    <span class="product-sale-badge" data-ar="-8%" data-en="-8%">-8%</span>
+                    <img src="assets/img/17.1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/17.2.webp" class="product-img img-back" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="جوي" data-en="Joy">جوي</p>
+            <p class="product-price anan-card-price" data-old-price="1850" data-ar="1,702.00 ج.م" data-en="1,702.00 LE"><del>1,850.00</del><strong>1,702.00 LE</strong></p>
+        </div>
+    </div>
+</section>
+<section class="eid-look-section">
+    <div class="eid-look-wrap">
+        <div class="eid-look-imgclip">
+            <img src="assets/img/18.1.webp" alt="Eid 2026 Collection" class="eid-look-img eid-look-front">
+            <img src="assets/img/18.2.webp" alt="Eid 2026 Collection" class="eid-look-img eid-look-back">
+        </div>
+        <div class="eid-look-spot" style="top:65%; left:29%;">
+            <button class="eid-hotspot" type="button" aria-label="Shop this look" aria-expanded="false"></button>
+            <div class="eid-look-popup product-card" aria-hidden="true">
+                <div class="eid-look-imgwrap">
+                    <img src="assets/img/s1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/s2.webp" class="product-img img-back" alt="product">
+                    <button class="wishlist-btn" type="button" aria-label="Add to wishlist"><i class="ph ph-heart"></i></button>
+                    <button class="quick-shop-btn" type="button"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span data-ar="تسوق سريع" data-en="Quick Shop">تسوق سريع</span></button>
+                </div>
+                <p class="product-name" data-ar="عباية سيلفي كريب" data-en="Seify Crepe Abaya">عباية سيلفي كريب</p>
+                <p class="product-price" data-ar="1,600.00 ج.م" data-en="1,600.00 LE">1,600.00 ج.م</p>
+                <button class="eid-look-view-btn quick-shop-btn" type="button" aria-label="Quick view"><i class="ph ph-eye" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="eid-look-spot" style="top:65%; left:70%;">
+            <button class="eid-hotspot" type="button" aria-label="Shop this look" aria-expanded="false"></button>
+            <div class="eid-look-popup product-card" aria-hidden="true">
+                <div class="eid-look-imgwrap">
+                    <img src="assets/img/s1.webp" class="product-img img-front" alt="product">
+                    <img src="assets/img/s2.webp" class="product-img img-back" alt="product">
+                    <button class="wishlist-btn" type="button" aria-label="Add to wishlist"><i class="ph ph-heart"></i></button>
+                    <button class="quick-shop-btn" type="button"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span data-ar="تسوق سريع" data-en="Quick Shop">تسوق سريع</span></button>
+                </div>
+                <p class="product-name" data-ar="عباية سيلفي كريب" data-en="Seify Crepe Abaya">عباية سيلفي كريب</p>
+                <p class="product-price" data-ar="1,600.00 ج.م" data-en="1,600.00 LE">1,600.00 ج.م</p>
+                <button class="eid-look-view-btn quick-shop-btn" type="button" aria-label="Quick view"><i class="ph ph-eye" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <h2 class="bestsellers-title" data-ar="مجموعة العيد 2026" data-en="Eid Collection 2026">مجموعة العيد 2026</h2>
+    <a href="EidCollection2026.html" class="view-more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+    <div class="product-grid">
+        <!-- تمارا كتان -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="TamaraLinen.html" class="product-image-link" aria-label="Open Tamara Linen">
+                    <img src="assets/img/19.1.webp" class="product-img img-a active-a" alt="product">
+                    <img src="assets/img/19.2.webp" class="product-img img-b" alt="product">
+                    <img src="assets/img/19.3.webp" class="product-img img-c" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="تمارا كتان" data-en="Tamara Linen">تمارا كتان</p>
+            <p class="product-price" data-ar="1,675.00 ج.م" data-en="1,675.00 LE">1,675.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-image:url('assets/img/19.1.webp')">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-image:url('assets/img/19.2.webp')">
+                    <span class="swatch-tooltip" data-ar="بني" data-en="Brown">بني</span>
+                </button>
+                <button class="swatch swatch-c" style="background-color:#1c3f8a">
+                    <span class="swatch-tooltip" data-ar="أزرق" data-en="Blue">أزرق</span>
+                </button>
+            </div>
+        </div>
+        <!-- هنا -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Hana.html" class="product-image-link" aria-label="Open Hana">
+                    <img src="assets/img/20.1.webp" class="product-img img-a active-a" alt="product">
+                    <img src="assets/img/20.2.webp" class="product-img img-b" alt="product">
+                    <img src="assets/img/20.3.webp" class="product-img img-c" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="هنا" data-en="Hana">هنا</p>
+            <p class="product-price" data-ar="1,400.00 ج.م" data-en="1,400.00 LE">1,400.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-image:url('assets/img/20.1.webp')">
+                    <span class="swatch-tooltip" data-ar="سيمون" data-en="Simon">سيمون</span>
+                </button>
+                <button class="swatch swatch-b" style="background-image:url('assets/img/20.2.webp')">
+                    <span class="swatch-tooltip" data-ar="اسود" data-en="Black">اسود</span>
+                </button>
+                <button class="swatch swatch-c" style="background-image:url('assets/img/20.3.webp')">
+                    <span class="swatch-tooltip" data-ar="أزرق" data-en="Blue">أزرق</span>
+                </button>
+            </div>
+        </div>
+        <!-- ماريس -->
+        <div class="product-card anan-sale-card is-on-sale">
+            <div class="product-img-wrap">
+                <a href="Maris.html" class="product-image-link" aria-label="Open Maris">
+                    <span class="product-sale-badge" data-ar="-10%" data-en="-10%">-10%</span>
+                    <img src="assets/img/21.1.webp" class="product-img img-a active-a" alt="product">
+                    <img src="assets/img/21.2.webp" class="product-img img-b" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="ماريس" data-en="Maris">ماريس</p>
+            <p class="product-price anan-card-price" data-old-price="1850" data-ar="1,665.00 ج.م" data-en="1,665.00 LE"><del>1,850.00</del><strong>1,665.00 LE</strong></p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-image:url('assets/img/21.1.webp')">
+                    <span class="swatch-tooltip" data-ar="أسود" data-en="Black">أسود</span>
+                </button>
+                <button class="swatch swatch-b" style="background-image:url('assets/img/21.2.webp')">
+                    <span class="swatch-tooltip" data-ar="بني" data-en="Brown">بني</span>
+                </button>
+            </div>
+        </div>
+        <!-- فيرا -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="Fira.html" class="product-image-link" aria-label="Open Fira">
+                    <img src="assets/img/22.1.webp" class="product-img img-a active-a" alt="product">
+                    <img src="assets/img/22.2.webp" class="product-img img-b" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="فيرا" data-en="Fira">فيرا</p>
+            <p class="product-price" data-ar="1,850.00 ج.م" data-en="1,850.00 LE">1,850.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-image:url('assets/img/22.1.webp')">
+                    <span class="swatch-tooltip" data-ar="اخضر زيتي" data-en="Olive">اخضر زيتي</span>
+                </button>
+                <button class="swatch swatch-b" style="background-image:url('assets/img/22.2.webp')">
+                    <span class="swatch-tooltip" data-ar="اسود" data-en="Black">اسود</span>
+                </button>
+            </div>
+        </div>
+        <!-- دريس ساندي -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <a href="SandyDress.html" class="product-image-link" aria-label="Open Sandy Dress">
+                    <img src="assets/img/23.1.webp" class="product-img img-a active-a" alt="product">
+                    <img src="assets/img/23.2.webp" class="product-img img-b" alt="product">
+                </a>
+                <button class="wishlist-btn"><i class="ph ph-heart"></i></button>
+                <button class="quick-shop-btn product-cart-icon" type="button" aria-label="Add product to cart" title="Add to cart"><i class="ph ph-shopping-cart-simple" aria-hidden="true"></i><span class="visually-hidden" data-ar="إضافة إلى السلة" data-en="Add to cart">إضافة إلى السلة</span></button>
+            </div>
+            <p class="product-name" data-ar="دريس ساندي" data-en="Sandy Dress">دريس ساندي</p>
+            <p class="product-price" data-ar="1,800.00 ج.م" data-en="1,800.00 LE">1,800.00 ج.م</p>
+            <div class="color-swatches">
+                <button class="swatch swatch-a" style="background-image:url('assets/img/23.1.webp')">
+                    <span class="swatch-tooltip" data-ar="وردي" data-en="Pink">وردي</span>
+                </button>
+                <button class="swatch swatch-b" style="background-image:url('assets/img/23.2.webp')">
+                    <span class="swatch-tooltip" data-ar="اخضر" data-en="Green">اخضر</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews-section">
+    <div class="reviews-header">
+      <h2 data-ar="عملاؤنا يقولون" data-en="Customers are saying">
+        عملاؤنا يقولون
+      </h2>
+      <div class="rating-summary">
+        <div class="stars">★★★★★</div>
+        <span class="rating-number">4.85</span>
+        <span class="rating-star">★</span>
+        <span class="reviews-count">(158)</span>
+        <span class="verified">
+          <span class="verified-icon">✓</span>
+          <span data-ar="موثّق" data-en="Verified">موثّق</span>
+        </span>
+      </div>
+    </div>
+    <div class="reviews-wrapper">
+      <button class="slider-btn prev" aria-label="Previous">
+        <span>‹</span>
+      </button>
+      <div class="reviews-slider" id="reviewsSlider">
+        <!-- Review 1 -->
+        <article class="review-card">
+          <div class="review-image">
+            <img src="assets/img/24.webp"
+                 alt="Customer review">
+          </div>
+          <div class="review-content">
+            <p
+              data-ar="الخامة حلوة جدًا وجاية عندكم جميلة وراقية"
+              data-en="The fabric is really beautiful and arrived looking elegant and luxurious."
+            >
+              الخامة حلوة جدًا وجاية عندكم جميلة وراقية
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong
+                data-ar="سوت جيب مليون"
+                data-en="Soot Geeb Million"
+              >
+                سوت جيب مليون
+              </strong>
+              <small
+                data-ar="عبايه ريان كريب"
+                data-en="Ain Zain Crepe"
+              >
+                عبايه ريان كريب
+              </small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 2 -->
+        <article class="review-card">
+          <div class="review-image">
+            <img src="assets/img/24.1.webp"
+                 alt="Customer review">
+          </div>
+          <div class="review-content">
+            <p
+              data-ar="جميلة ما شاء الله، التفصيل محترم جدًا والخامة والسيز وكل حاجة، والمقاس مضبوط بالاسم"
+              data-en="Beautiful, the tailoring is excellent, the fabric and size are perfect, and the measurements are accurate."
+            >
+              جميلة ما شاء الله، التفصيل محترم جدًا والخامة والسيز وكل حاجة، والمقاس مضبوط بالاسم
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Maha Shaalan</strong>
+              <small data-ar="الينا" data-en="Elena">الينا</small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 3 -->
+        <article class="review-card text-only">
+          <div class="review-content">
+            <p
+              data-ar="خطيرة بجد حلوة جدًا، التريتال والتفاصيل في المقاس حلو خالص والمقاس مضبوط جدًا، إن شاء الله عليكم كل مرة"
+              data-en="Absolutely amazing! The details and measurements are perfect. The fit is excellent and I will definitely order again."
+            >
+              خطيرة بجد حلوة جدًا، التريتال والتفاصيل في المقاس حلو خالص والمقاس مضبوط جدًا، إن شاء الله عليكم كل مرة
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Mariam Ibrahim</strong>
+              <small data-ar="ايلا" data-en="Elena">ايلا</small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 4 -->
+        <article class="review-card text-only">
+          <div class="review-content">
+            <p
+              data-ar="الخامة تحفة ومضبوطة في اللبس"
+              data-en="The fabric is amazing and fits perfectly."
+            >
+              الخامة تحفة ومضبوطة في اللبس
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Anonymous</strong>
+              <small data-ar="نغم" data-en="Yes">نعم</small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 5 -->
+        <article class="review-card text-only">
+          <div class="review-content">
+            <p
+              data-ar="بجد فوق التوقعات، المقاس مضبوط تفصيل ممتاز موديل مختلف ومحترم"
+              data-en="It exceeded my expectations. Perfect measurements, excellent tailoring and a beautiful unique design."
+            >
+              بجد فوق التوقعات، المقاس مضبوط تفصيل ممتاز موديل مختلف ومحترم
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Salwa Hanafy</strong>
+              <small data-ar="AlYasser" data-en="AlYasser">AlYasser</small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 6 -->
+        <article class="review-card text-only">
+          <div class="review-content">
+            <p
+              data-ar="بجد فوق التوقعات، خامة حلوة جدًا والمقاس مضبوط موديل مختلف ومحترم 👏🥰"
+              data-en="It really exceeded my expectations. Great fabric, perfect size and a beautiful unique design."
+            >
+              بجد فوق التوقعات، خامة حلوة جدًا والمقاس مضبوط موديل مختلف ومحترم 👏🥰
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Salwa Hanafy</strong>
+              <small data-ar="فيتا" data-en="Vita">فيتا</small>
+            </div>
+          </div>
+        </article>
+        <!-- Review 7 -->
+        <article class="review-card text-only">
+          <div class="review-content">
+            <p
+              data-ar="Amazing 💜💜💜"
+              data-en="Amazing 💜💜💜"
+            >
+              Amazing 💜💜💜
+            </p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author">
+              <strong>Anonymous</strong>
+              <small data-ar="نعم" data-en="Yes">نعم</small>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="slider-btn next" aria-label="Next">
+        <span>›</span>
+      </button>
+    </div>
+    <!-- Dots -->
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+<section class="instagram-section">
+    <h2 class="instagram-title" data-ar="حسابنا على انستجرام" data-en="Our account on Instagram">حسابنا على انستجرام</h2>
+    <div class="instagram-grid">
+        <a href="https://www.instagram.com/allayasserofficial/" class="insta-item" target="_blank">
+            <img src="assets/img/25.1.webp" alt="Instagram post">
+            <span class="insta-icon"><i class="ph ph-instagram-logo"></i></span>
+        </a>
+        <a href="https://www.instagram.com/allayasserofficial/" class="insta-item" target="_blank">
+            <img src="assets/img/25.2.webp" alt="Instagram post">
+            <span class="insta-icon"><i class="ph ph-instagram-logo"></i></span>
+        </a>
+        <a href="https://www.instagram.com/allayasserofficial/" class="insta-item" target="_blank">
+            <img src="assets/img/25.3.webp" alt="Instagram post">
+            <span class="insta-icon"><i class="ph ph-instagram-logo"></i></span>
+        </a>
+        <a href="https://www.instagram.com/allayasserofficial/" class="insta-item" target="_blank">
+            <img src="assets/img/25.4.webp" alt="Instagram post">
+            <span class="insta-icon"><i class="ph ph-instagram-logo"></i></span>
+        </a>
+    </div>
+</section>
+<section class="features-section">
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="ph ph-truck"></i>
+            </div>
+            <p class="feature-text" data-ar="شحن مجاني" data-en="FREE SHIPPING">شحن مجاني</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="ph ph-tag"></i>
+            </div>
+            <p class="feature-text" data-ar="دفع آمن ومرن" data-en="Secure & Flexible Payment">دفع آمن ومرن</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="ph ph-headset"></i>
+            </div>
+            <p class="feature-text" data-ar="دعم عملاء أونلاين" data-en="Online Customer Support">دعم عملاء أونلاين</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="ph ph-thumbs-up"></i>
+            </div>
+            <p class="feature-text" data-ar="استرجاع سهل" data-en="Easy Returns">استرجاع سهل</p>
+        </div>
+    </div>
+</section>
+<a class="branches-section-link" href="OurBranches.html"><section class="branches-section" id="ourBranchesSection" tabindex="0" role="link" aria-label="Our Branches">
+    <div class="branches-grid">
+        <div class="branch-card">
+            <img src="assets/img/26.1.webp" alt="فرع جسر السويس">
+            <div class="branch-overlay"></div>
+            <div class="branch-image-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="branch-card">
+            <img src="assets/img/26.2.webp" alt="فرع الهرم">
+            <div class="branch-overlay"></div>
+            <div class="branch-image-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="branch-card">
+            <img src="assets/img/26.3.webp" alt="فرع عباس العقاد">
+            <div class="branch-overlay"></div>
+            <div class="branch-image-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="branch-card">
+            <img src="assets/img/26.4.webp" alt="فرع الإسكندرية">
+            <div class="branch-overlay"></div>
+            <div class="branch-image-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+</a>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" dir="ltr">
+    <div class="footer-container">
+        <!-- Logo & About -->
+        <div class="footer-brand">
+            <img src="assets/img/loge 2.webp"
+                class="footer-logo"
+            >
+            <p class="footer-description">
+                <span class="lang-en">
+                    Al Yasser Fashion Factory offers elegant abayas and dresses with
+                    high quality, stylish designs, and a smooth shopping experience
+                    with great customer service.
+                </span>
+                <span class="lang-ar">
+                    مصنع الياسر للأزياء يقدم عبايات وفساتين أنيقة
+                    بجودة عالية وتصاميم عصرية وتجربة تسوق سهلة
+                    مع خدمة عملاء مميزة.
+                </span>
+            </p>
+            <!-- Social Media -->
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">
+                    <i class="ph ph-facebook-logo"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="ph ph-youtube-logo"></i>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <i class="ph ph-tiktok-logo"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Categories -->
+        <div class="footer-column">
+            <h3>
+                <span class="lang-en">Categories</span>
+                <span class="lang-ar">التصنيفات</span>
+            </h3>
+            <ul>
+                <li>
+                    <a href="RamadanKaftans2026.html">
+                        <span class="lang-en">Ramadan Kaftans 2026</span>
+                        <span class="lang-ar">قفاطين رمضان 2026</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Denim2026.html">
+                        <span class="lang-en">Denim 2026</span>
+                        <span class="lang-ar">دينم 2026</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="UmrahAbaya.html">
+                        <span class="lang-en">Hajj abayas</span>
+                        <span class="lang-ar">عبايات الحج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Information -->
+        <div class="footer-column">
+            <h3>
+                <span class="lang-en">Information</span>
+                <span class="lang-ar">المعلومات</span>
+            </h3>
+            <ul>
+                <li>
+<a href="Returns.html">
+<span class="lang-en">Returns</span>
+<span class="lang-ar">الإرجاع</span>
+</a>
+</li>
+                <li>
+<a href="Privacy.html">
+<span class="lang-en">Privacy</span>
+<span class="lang-ar">الخصوصية</span>
+</a>
+</li>
+                <li>
+<a href="TermsOfService.html">
+<span class="lang-en">Terms of Service</span>
+<span class="lang-ar">شروط الخدمة</span>
+</a>
+</li>
+                <li>
+                    <a href="ContactUs.html">
+                        <span class="lang-en">Contact Us</span>
+                        <span class="lang-ar">تواصل معنا</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <h3>
+                <span class="lang-en">Newsletter Signup</span>
+                <span class="lang-ar">الاشتراك في النشرة البريدية</span>
+            </h3>
+            <p>
+                <span class="lang-en">
+                    Subscribe to our newsletter and get 10% off
+                    your first purchase
+                </span>
+                <span class="lang-ar">
+                    اشترك في النشرة البريدية واحصل على خصم 10%
+                    على أول طلب لك.
+                </span>
+            </p>
+            <form class="newsletter-form">
+                <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                >
+                <button type="submit" aria-label="Subscribe">
+                    <i class="ph ph-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</footer>
+<!-- ================= WHATSAPP ================= -->
+<div class="whatsapp-box">
+    <a
+        href="https://wa.me/201000000000"
+        target="_blank"
+        class="whatsapp-button"
+        aria-label="WhatsApp"
+    >
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+    <div class="whatsapp-text">
+        <span class="lang-en">
+            Need Help? Chat with us
+        </span>
+        <span class="lang-ar">
+            تحتاج مساعدة؟ تحدث معنا
+        </span>
+    </div>
+</div>
+<!-- ================= BACK TO TOP ================= -->
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top">
+    <span class="arrow-up">⌃</span>
+</button>
+<div class="overlay" id="overlay"></div>
+<div class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+        <button class="side-menu-close" id="menuCloseBtn">&times;</button>
+    </div>
+    <ul class="side-menu-list">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="BestSeller.html" data-ar="الأكثر مبيعاً" data-en="Best Seller">الأكثر مبيعاً</a></li>
+        <li><a href="NewProducts.html" data-ar="وصل حديثاً" data-en="New Arrival">وصل حديثاً</a></li>
+        <li><a href="Sale.html" data-ar="التخفيضات" data-en="Sale">التخفيضات</a></li>
+        <li class="has-submenu">
+            <div class="submenu-row">
+                <a href="#" data-ar="تشكيلة الموسم" data-en="Season Collection">تشكيلة الموسم</a>
+                <button class="submenu-toggle" aria-expanded="false">+</button>
+            </div>
+            <ul class="side-submenu">
+                <li><a href="RamadanKaftans2026.html" data-ar="قفاطين رمضان 2026" data-en="Ramadan Kaftans 2026">قفاطين رمضان 2026</a></li>
+                <li><a href="Summer2026.html" data-ar="تشكيلة الصيف 2026" data-en="Summer 2026">تشكيلة الصيف 2026</a></li>
+                <li><a href="Denim2026.html" data-ar="دنيم 2026" data-en="Denim 2026">دنيم 2026</a></li>
+                <li><a href="UmrahAbaya.html" data-ar="عبايات الحج" data-en="Hajj Abayas">عبايات الحج</a></li>
+            </ul>
+        </li>
+        <li class="has-submenu">
+            <div class="submenu-row">
+                <a href="#" data-ar="كل التشكيلات" data-en="All Collection">كل التشكيلات</a>
+                <button class="submenu-toggle" aria-expanded="false">+</button>
+            </div>
+            <ul class="side-submenu">
+                <li><a href="UmrahAbaya.html" data-ar="عبايات الحج" data-en="Hajj Abayas">عبايات الحج</a></li>
+                <li><a href="Abaya.html" data-ar="عباية" data-en="Abaya">عباية</a></li>
+                <li><a href="Niqab.html" data-ar="نقاب" data-en="Niqab">نقاب</a></li>
+                <li><a href="Denim2026.html" data-ar="دنيم 2026" data-en="Denim 2026">دنيم 2026</a></li>
+                <li><a href="Winter2025-2026.html" data-ar="شتاء 2025-2026" data-en="Winter 2025-2026">شتاء 2025-2026</a></li>
+            </ul>
+        </li>
+        <li><a href="Winter2025-2026.html?view=collection" data-ar="تشكيلة الشتاء" data-en="Winter Collection">تشكيلة الشتاء</a></li>
+        <li><a href="ContactUs.html" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+        <li><a href="OurBranches.html" data-ar="فروعنا" data-en="Our Branches">فروعنا</a></li>
+    </ul>
+    <div class="side-social">
+        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#"><i class="ph ph-youtube-logo"></i></a>
+        <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+    </div>
+    <button id="langToggle" class="lang-toggle-side">EN</button>
+</div>
+<!-- ================= SEARCH ================= -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="search-close" id="searchCloseBtn">&times;</button>
+        <div class="category-select-wrap">
+            <select id="categorySelect" class="category-select">
+                <option value="all" data-ar="كل التصنيفات" data-en="All Categories">كل التصنيفات</option>
+                <option value="abaya" data-ar="عباية" data-en="Abaya">عباية</option>
+                <option value="chemise" data-ar="شيميز" data-en="Chemise">شيميز</option>
+                <option value="black-pants" data-ar="بنطلون اسود" data-en="Black Pants">بنطلون اسود</option>
+            </select>
+        </div>
+        <div class="search-input-wrap">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="searchInput"
+                placeholder="ابحث عن منتج..."
+                data-ar-placeholder="ابحث عن منتج..."
+                data-en-placeholder="Search for a product...">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+<!-- ================= QUICK SHOP MODAL ================= -->
+<div class="quick-shop-overlay" id="quickShopOverlay" aria-hidden="true">
+    <div class="quick-shop-modal" role="dialog" aria-modal="true" aria-labelledby="quickShopName">
+        <button class="quick-shop-close" id="quickShopCloseBtn" aria-label="Close">&times;</button>
+        <div class="quick-shop-content">
+            <div class="quick-shop-image-wrap"><img id="quickShopImage" src="" alt=""></div>
+            <div class="quick-shop-details">
+                <h2 id="quickShopName"></h2>
+                <p id="quickShopPrice" class="quick-shop-price"></p>
+                <div class="quick-shop-label" data-ar="اللون: أسود" data-en="COLOR: BLACK">اللون: أسود</div>
+                <div class="quick-shop-thumb"><img id="quickShopThumb" src="" alt=""></div>
+                <div class="quick-shop-label" data-ar="المقاس: 44" data-en="SIZE: 44">المقاس: 44</div>
+                <div class="size-options" id="quickShopSizes">
+                    <button class="size-option active">44</button><button class="size-option">46</button><button class="size-option">48</button><button class="size-option">52</button><button class="size-option">54</button><button class="size-option">56</button>
+                </div>
+                <div class="quick-shop-actions"><div class="quantity-control"><button id="quickQtyMinus">−</button><span id="quickQty">1</span><button id="quickQtyPlus">+</button></div><button class="quick-wishlist" type="button" aria-label="Add to wishlist" aria-pressed="false" data-tooltip="Add to Wishlist"><svg class="quick-heart-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg></button></div>
+                <button class="quick-add-btn" id="quickAddBtn" data-ar="إضافة إلى السلة" data-en="ADD TO CART">إضافة إلى السلة</button>
+                <button class="quick-buy-btn" id="quickBuyBtn" data-ar="اشتري الآن" data-en="BUY IT NOW">اشتري الآن</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================= CART DRAWER ================= -->
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header"><h2 data-ar="سلة التسوق" data-en="Shopping Cart">سلة التسوق</h2><button id="cartCloseBtn" aria-label="Close">&times;</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><i class="ph ph-shopping-cart-simple"></i><p data-ar="السلة فارغة" data-en="Your cart is empty.">السلة فارغة</p><button id="returnShopBtn" data-ar="العودة للتسوق" data-en="RETURN TO SHOP">العودة للتسوق</button></div>
+    <div class="cart-footer" id="cartFooter"><div><span data-ar="الإجمالي الفرعي" data-en="Subtotal">الإجمالي الفرعي</span><strong id="cartSubtotal">0.00 LE</strong></div><button class="cart-view-btn" data-ar="عرض السلة" data-en="VIEW CART">عرض السلة</button><button class="cart-checkout-btn" data-ar="إتمام الشراء" data-en="CHECK OUT">إتمام الشراء</button></div>
+</aside>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js?v=swatch-click"></script>
+</body>
+</html

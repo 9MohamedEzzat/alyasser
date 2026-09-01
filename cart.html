@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script data-lang-boot>
+(function () {
+  try {
+    var match = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    var saved = localStorage.getItem('alyasser_lang') || (match && match[1]) || 'ar';
+    saved = saved === 'en' ? 'en' : 'ar';
+    document.documentElement.lang = saved;
+    document.documentElement.dir = saved === 'en' ? 'ltr' : 'rtl';
+  } catch (e) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+  }
+}());
+</script>
+    <title data-ar="السلة | ALYASSER" data-en="Cart | ALYASSER">السلة | ALYASSER</title>
+<script>
+(function () {
+  var saved = 'ar';
+  try {
+    var c = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    saved = localStorage.getItem('alyasser_lang') || (c && c[1]) || 'ar';
+  } catch (e) {}
+  saved = saved === 'en' ? 'en' : 'ar';
+  var t = document.querySelector('title');
+  document.title = saved === 'en' ? t.getAttribute('data-en') : t.getAttribute('data-ar');
+}());
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<link rel="icon" type="image/webp" href="assets/img/loge.webp">
+<link rel="apple-touch-icon" href="assets/img/loge.webp">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="cart-page-body">
+  <div class="promo-bar" data-ar="لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط" data-en="Limited time: Up to 20% off for 3 days only">لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط</div>
+  <header class="cart-page-header">
+    <a href="index.html" class="cart-page-back"><i class="ph ph-arrow-right"></i> <span data-ar="العودة للتسوق" data-en="Continue shopping">العودة للتسوق</span></a>
+    <a href="index.html" class="cart-page-logo"><img src="assets/img/loge.webp" alt="ALYASSER logo"></a>
+    <span class="cart-page-header-spacer" aria-hidden="true"></span>
+  </header>
+  <main class="cart-page-main">
+    <h1 data-ar="سلة التسوق" data-en="Shopping cart">سلة التسوق</h1>
+    <div id="cartPageEmpty" class="cart-page-empty" hidden>
+      <i class="ph ph-shopping-cart-simple"></i><p data-ar="السلة فارغة" data-en="Your cart is empty">السلة فارغة</p><a href="index.html" data-ar="العودة للتسوق" data-en="Continue shopping">العودة للتسوق</a>
+    </div>
+    <div id="cartPageContent" class="cart-page-layout">
+      <section id="cartPageItems" class="cart-page-items"></section>
+      <aside class="cart-page-summary">
+        <h2 data-ar="ملخص الطلب" data-en="Order summary">ملخص الطلب</h2>
+        <div><span data-ar="الإجمالي الفرعي" data-en="Subtotal">الإجمالي الفرعي</span><strong id="cartPageSubtotal">ج.م 0.00</strong></div>
+        <div><span data-ar="الشحن" data-en="Shipping">الشحن</span><strong id="cartPageShipping">110 ج.م</strong></div>
+        <div class="cart-page-total"><span data-ar="الإجمالي" data-en="Total">الإجمالي</span><strong id="cartPageTotal">ج.م 110.00</strong></div>
+        <a class="cart-page-checkout" href="checkout.html" data-ar="إتمام الشراء" data-en="Checkout">إتمام الشراء</a>
+      </aside>
+    </div>
+  </main>
+  <script>
+    (function(){
+      const lang=localStorage.getItem('alyasser_lang')||'ar';
+      document.documentElement.lang=lang;
+      document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+      document.querySelectorAll('[data-ar][data-en]').forEach(el=>{el.textContent=lang==='ar'?el.dataset.ar:el.dataset.en});
+    })();
+    (function(){
+      const key='alyasser_cart';
+      const isEnglish=()=>document.documentElement.lang==='en';
+      const money=n=>(isEnglish()?'LE ':'ج.م ')+Number(n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      const read=()=>{try{return JSON.parse(localStorage.getItem(key))||[]}catch(e){return[]}};
+      const save=cart=>localStorage.setItem(key,JSON.stringify(cart));
+      function render(){
+        const cart=read(), list=document.getElementById('cartPageItems'), empty=document.getElementById('cartPageEmpty'), content=document.getElementById('cartPageContent');
+        list.innerHTML=''; let subtotal=0;
+        cart.forEach((item,index)=>{
+          subtotal+=Number(item.price||0)*Number(item.qty||1);
+          const row=document.createElement('article'); row.className='cart-page-item';
+          const en=document.documentElement.lang==='en';
+          row.innerHTML='<img src="'+(item.img||'')+'" alt=""><div class="cart-page-item-info"><h2>'+(en?(item.nameEn||item.nameAr||'Product'):(item.nameAr||item.nameEn||'منتج'))+'</h2><p>'+money(item.price)+'</p><small>'+(en?'Size: ':'المقاس: ')+(item.size||'44')+'</small><div class="cart-page-qty"><button data-action="minus" data-index="'+index+'">−</button><span>'+(item.qty||1)+'</span><button data-action="plus" data-index="'+index+'">+</button></div></div><button class="cart-page-remove" data-action="remove" data-index="'+index+'" aria-label="'+(en?'Remove':'حذف')+'"><i class="ph ph-trash"></i></button>';
+          list.appendChild(row);
+        });
+        const has=cart.length>0; empty.hidden=has; content.hidden=!has;
+        document.getElementById('cartPageSubtotal').textContent=money(subtotal);
+        document.getElementById('cartPageShipping').textContent=money(110);
+        document.getElementById('cartPageTotal').textContent=money(has?subtotal+110:110);
+      }
+      document.addEventListener('click',function(e){const btn=e.target.closest('[data-action]');if(!btn)return;const cart=read(),i=Number(btn.dataset.index);if(btn.dataset.action==='remove')cart.splice(i,1);if(btn.dataset.action==='plus'&&cart[i])cart[i].qty=(cart[i].qty||1)+1;if(btn.dataset.action==='minus'&&cart[i]){cart[i].qty=(cart[i].qty||1)-1;if(cart[i].qty<=0)cart.splice(i,1)}save(cart);render()});
+      window.renderCartPage=render;
+      render();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script data-lang-boot>
+(function () {
+  try {
+    var match = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    var saved = localStorage.getItem('alyasser_lang') || (match && match[1]) || 'ar';
+    saved = saved === 'en' ? 'en' : 'ar';
+    document.documentElement.lang = saved;
+    document.documentElement.dir = saved === 'en' ? 'ltr' : 'rtl';
+  } catch (e) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+  }
+}());
+</script>
+<title data-ar="إتمام الطلب | ALYASSER" data-en="Checkout | ALYASSER">إتمام الطلب | ALYASSER</title>
+<script>
+(function () {
+  var saved = 'ar';
+  try {
+    var c = document.cookie.match(/(?:^|; )alyasser_lang=(ar|en)(?:;|$)/);
+    saved = localStorage.getItem('alyasser_lang') || (c && c[1]) || 'ar';
+  } catch (e) {}
+  saved = saved === 'en' ? 'en' : 'ar';
+  var t = document.querySelector('title');
+  document.title = saved === 'en' ? t.getAttribute('data-en') : t.getAttribute('data-ar');
+}());
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<link rel="icon" type="image/webp" href="assets/img/loge.webp">
+<link rel="apple-touch-icon" href="assets/img/loge.webp">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="checkout-page">
+<header class="checkout-header"><a href="index.html"><img src="assets/img/loge.webp" alt="ALYASSER"></a></header>
+<main class="checkout-layout">
+<section class="checkout-form-column">
+<form id="checkoutForm" novalidate>
+<h1 data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</h1>
+<div class="checkout-section"><div class="section-heading"><h2 data-ar="بيانات التواصل" data-en="Contact">بيانات التواصل</h2><a href="#" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</a></div><input name="email" type="email" placeholder="البريد الإلكتروني" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email" required><label class="check-row"><input type="checkbox" name="offers"><span data-ar="أرسل لي الأخبار والعروض" data-en="Email me with news and offers">أرسل لي الأخبار والعروض</span></label></div>
+<div class="checkout-section"><h2 data-ar="التوصيل" data-en="Delivery">التوصيل</h2><select name="country" required><option value="Egypt">مصر</option></select><div class="checkout-two-col"><input name="firstName" placeholder="الاسم الأول (اختياري)" data-ar-placeholder="الاسم الأول (اختياري)" data-en-placeholder="First name (optional)"><input name="lastName" placeholder="اسم العائلة" data-ar-placeholder="اسم العائلة" data-en-placeholder="Last name" required></div><input name="address" placeholder="العنوان" data-ar-placeholder="العنوان" data-en-placeholder="Address" required><div class="checkout-three-col"><input name="city" placeholder="المدينة" data-ar-placeholder="المدينة" data-en-placeholder="City" required><select name="governorate" required><option value="">المحافظة</option><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>الغربية</option><option>الدقهلية</option><option>الشرقية</option><option>المنوفية</option><option>البحيرة</option><option>القليوبية</option><option>سوهاج</option><option>أسيوط</option><option>الأقصر</option><option>أسوان</option></select><input name="postalCode" placeholder="الرمز البريدي (اختياري)" data-ar-placeholder="الرمز البريدي (اختياري)" data-en-placeholder="Postal code (optional)"></div><input name="phone" type="tel" placeholder="رقم الهاتف" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone" required><label class="check-row"><input type="checkbox" name="saveInfo"><span data-ar="حفظ بياناتي للمرة القادمة" data-en="Save this information for next time">حفظ بياناتي للمرة القادمة</span></label></div>
+<div class="checkout-section"><h2 data-ar="طريقة الشحن" data-en="Shipping method">طريقة الشحن</h2><label class="choice-card selected"><input type="radio" name="shipping" value="110" checked><span data-ar="رسوم الشحن" data-en="Shipping Fees">رسوم الشحن</span><strong>110 EGP</strong></label></div>
+<div class="checkout-section"><h2 data-ar="الدفع" data-en="Payment">الدفع</h2><p class="secure-note" data-ar="جميع المعاملات آمنة ومشفرة." data-en="All transactions are secure and encrypted.">جميع المعاملات آمنة ومشفرة.</p><label class="choice-card selected"><input type="radio" name="payment" checked><span data-ar="الدفع عند الاستلام (COD)" data-en="Cash on Delivery (COD)">الدفع عند الاستلام (COD)</span></label></div>
+<div class="checkout-section"><h2 data-ar="عنوان الفوترة" data-en="Billing address">عنوان الفوترة</h2><label class="choice-card selected"><input type="radio" name="billing" value="same" checked><span data-ar="نفس عنوان التوصيل" data-en="Same as shipping address">نفس عنوان التوصيل</span></label><label class="choice-card"><input type="radio" name="billing" value="different"><span data-ar="استخدام عنوان فوترة مختلف" data-en="Use a different billing address">استخدام عنوان فوترة مختلف</span></label></div>
+<button class="complete-order-btn" type="submit" data-ar="إتمام الطلب" data-en="Complete order">إتمام الطلب</button><p class="checkout-policy">سياسة الاسترجاع &nbsp; الشحن &nbsp; سياسة الخصوصية &nbsp; شروط الخدمة &nbsp; الإلغاء</p><div id="checkoutMessage" class="checkout-message" role="status"></div>
+</form>
+</section>
+<aside class="checkout-summary"><div id="checkoutItems"></div><div class="discount-row"><input id="discountCode" placeholder="كود الخصم" data-ar-placeholder="كود الخصم" data-en-placeholder="Discount code"><button id="applyDiscount" type="button" data-ar="تطبيق" data-en="Apply">تطبيق</button></div><div class="summary-line"><span data-ar="المجموع الفرعي" data-en="Subtotal">المجموع الفرعي</span><strong id="summarySubtotal">0.00 LE</strong></div><div class="summary-line"><span data-ar="الشحن" data-en="Shipping">الشحن</span><strong id="summaryShipping">110.00 LE</strong></div><div class="summary-total"><span data-ar="الإجمالي" data-en="Total">الإجمالي</span><strong id="summaryTotal">110.00 LE</strong></div><div class="savings" id="summarySavings"></div></aside>
+</main>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
