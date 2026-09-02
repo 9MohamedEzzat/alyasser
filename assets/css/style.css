@@ -9935,3 +9935,21 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   font-size: 16px !important;
   line-height: 34px !important;
 }
+
+/* ===== Heart card icon = same size as the cart icon (16px ph-heart) ===== */
+.product-card .product-img-wrap .wishlist-btn i.ph-heart,
+.product-card .wishlist-btn i.ph-heart{
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: #4a0630 !important;
+  -webkit-text-fill-color: #4a0630 !important;
+}
+.product-card .product-img-wrap .wishlist-btn::before,
+.product-card .wishlist-btn::before,
+.product-card .wishlist-btn.active::before{
+  content: none !important;
+  display: none !important;
+}
