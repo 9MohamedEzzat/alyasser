@@ -9907,3 +9907,19 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+
+/* ===== Wishlist active: navy fill outline heart stays empty ===== */
+.product-card .wishlist-btn.active{
+  background: #4b082d !important;
+  border-color: #4b082d !important;
+  color: #fff !important;
+}
+.product-card .wishlist-btn.active::before{
+  content: "
+♡
+" !important;
+  color: #fff !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+}
