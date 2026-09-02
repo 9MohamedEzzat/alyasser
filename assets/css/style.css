@@ -2616,6 +2616,18 @@ html[dir="ltr"] .cart-drawer{right:auto;left:-440px;transition:left .3s ease}
   color: #d11a2a !important;
 }
 
+/* Fix: on mobile/touch, tap "sticks" the :hover tooltip, and since .product-card
+   has overflow:hidden the fixed-width tooltip bleeds past the card edge and gets
+   clipped mid-word (e.g. "Add to Wish..."). Touch devices have no real hover, so
+   the tooltip is disabled there entirely instead of shown broken. */
+@media (max-width: 767px), (hover: none) {
+  .product-card .wishlist-btn::after,
+  .quick-wishlist::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
 /* Add-to-cart interaction matching the reference video */
 #quickAddBtn {
   position: relative;
@@ -9906,4 +9918,20 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+/* ===== Fix: heart glyph was 28px inside a 34px circle (almost no padding),
+   so it looked oversized/distorted next to the cart icon. Shrink it down and
+   center it properly, same as the other card icon. ===== */
+.product-card .wishlist-btn,
+.quick-wishlist {
+  width: 34px !important;
+  height: 34px !important;
+}
+.product-card .wishlist-btn::before,
+.quick-wishlist::before,
+.product-card .wishlist-btn.active::before,
+.quick-wishlist.active::before {
+  font-size: 16px !important;
+  line-height: 34px !important;
 }
