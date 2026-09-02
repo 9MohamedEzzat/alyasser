@@ -10004,3 +10004,21 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   width: 22px !important;
   height: 22px !important;
 }
+
+
+/* ===== FINAL: ensure only ONE heart (the SVG) — kill any text pseudo everywhere ===== */
+.product-card .wishlist-btn::before,
+.product-card .product-img-wrap .wishlist-btn::before,
+.product-img-wrap .wishlist-btn::before,
+.wishlist-btn::before,
+.product-card .wishlist-btn::after,
+.product-card .product-img-wrap .wishlist-btn::after,
+.product-img-wrap .wishlist-btn::after,
+.wishlist-btn::after,
+.product-card .wishlist-btn.active::before,
+.quick-wishlist.active::before{
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
