@@ -9907,27 +9907,3 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   visibility: hidden !important;
   pointer-events: none !important;
 }
-
-
-/* ===== Wishlist: premium ph-heart icon (not thin text heart); navy fill on active ===== */
-.product-card .wishlist-btn::before,
-.product-card .wishlist-btn.active::before{
-  content: none !important;
-  display: none !important;
-}
-.product-card .wishlist-btn i{
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  color: #4a0630 !important;
-}
-.product-card .wishlist-btn.active{
-  background: #4b082d !important;
-  border-color: #4b082d !important;
-  color: #fff !important;
-}
-.product-card .wishlist-btn.active i{
-  color: #fff !important;
-}
