@@ -10063,3 +10063,31 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   content: none !important;
   display: none !important;
 }
+
+
+/* ===== Hover: like cart — navy circle + white heart ===== */
+.product-card .wishlist-btn:hover,
+.product-img-wrap .wishlist-btn:hover{
+  background: #4b082d !important;
+  border-color: #4b082d !important;
+  color: #fff !important;
+  transform: none !important;
+}
+.product-card .wishlist-btn:hover i.ph-heart,
+.product-img-wrap .wishlist-btn:hover i.ph-heart,
+.wishlist-btn:hover i.ph-heart{
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  transform: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.product-card .wishlist-btn:hover::before,
+.product-img-wrap .wishlist-btn:hover::before,
+.wishlist-btn:hover::before{
+  content: none !important;
+  display: none !important;
+}
