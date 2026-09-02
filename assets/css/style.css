@@ -10022,3 +10022,25 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   visibility: hidden !important;
   opacity: 0 !important;
 }
+
+
+/* ===== Shrink Toba/Milana preview card on phones ===== */
+@media (max-width: 767px){
+  .toba-preview-overlay{ padding: 8px !important; }
+  .toba-preview-modal{
+    max-width: 92vw !important;
+    max-height: calc(100vh - 16px) !important;
+  }
+  .toba-preview-content{ min-height: 0 !important; }
+  .toba-preview-media-wrap,
+  .toba-preview-media{
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+  .toba-preview-media img,
+  .toba-preview-media video{
+    max-height: 300px !important;
+  }
+  .toba-preview-details{ padding: 14px 14px 16px !important; }
+  .toba-preview-details h2{ font-size: 15px !important; }
+}
