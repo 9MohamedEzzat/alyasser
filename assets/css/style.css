@@ -9908,186 +9908,49 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
 }
 
 
-/* ===== Hide heart tooltip text on hover ===== */
-.product-card .wishlist-btn::after,
-.wishlist-btn::after,
-.quick-wishlist::after,
-#quickShopOverlay .quick-wishlist::after{
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* ===== Fix: heart glyph was 28px inside a 34px circle (almost no padding),
-   so it looked oversized/distorted next to the cart icon. Shrink it down and
-   center it properly, same as the other card icon. ===== */
-.product-card .wishlist-btn,
-.quick-wishlist {
-  width: 34px !important;
-  height: 34px !important;
-}
-.product-card .wishlist-btn::before,
-.quick-wishlist::before,
-.product-card .wishlist-btn.active::before,
-.quick-wishlist.active::before {
-  font-size: 16px !important;
-  line-height: 34px !important;
-}
-
-/* ===== Heart card icon = same size as the cart icon (16px ph-heart) ===== */
-.product-card .product-img-wrap .wishlist-btn i.ph-heart,
-.product-card .wishlist-btn i.ph-heart{
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  color: #4a0630 !important;
-  -webkit-text-fill-color: #4a0630 !important;
-}
-.product-card .product-img-wrap .wishlist-btn::before,
-.product-card .wishlist-btn::before,
-.product-card .wishlist-btn.active::before{
-  content: none !important;
-  display: none !important;
-}
-
-
-/* ===== FINAL: heart drawn ONLY via ph-heart @16px (= cart size); kill every text-heart ===== */
-.product-card .product-img-wrap .wishlist-btn i.ph-heart,
-.product-img-wrap .wishlist-btn i.ph-heart,
-.product-card .wishlist-btn i.ph-heart{
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  color: #4a0630 !important;
-  -webkit-text-fill-color: #4a0630 !important;
-}
-.wishlist-btn::before,
-.product-card .wishlist-btn::before,
-.quick-wishlist::before,
-.wishlist-btn.active::before,
-.product-card .wishlist-btn.active::before{
-  content: none !important;
-  display: none !important;
-}
-.product-img-wrap .wishlist-btn,
-.product-card .wishlist-btn{
+/* ===== Clean final: heart card matches cart exactly =====
+   Note: ph-heart renders its glyph via <i>::before, so we only tune
+   the <i> box/font; we never kill the icon's own ::before.            ===== */
+.product-card .product-img-wrap .wishlist-btn,
+.home-page .product-img-wrap > .wishlist-btn{
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  z-index: 20 !important;
   width: 34px !important;
   height: 34px !important;
   min-width: 34px !important;
+  padding: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-}
-
-
-/* ===== FINAL override: no hover scale, no extra-grow, heart fixed 16px ===== */
-.product-card .product-img-wrap .wishlist-btn,
-.product-img-wrap .wishlist-btn{
-  transform: none !important;
-  width: 34px !important;
-  height: 34px !important;
-}
-.product-card .product-img-wrap > .wishlist-btn:hover,
-.product-img-wrap > .wishlist-btn:hover{
+  border: 1px solid rgba(23,19,17,.1) !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.94) !important;
+  color: #4a0630 !important;
+  box-shadow: 0 7px 20px rgba(23,19,17,.12) !important;
   transform: none !important;
 }
-.product-card .product-img-wrap .wishlist-btn i,
-.product-img-wrap .wishlist-btn i,
-.product-card .wishlist-btn i{
-  transform: none !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  scale: 1 !important;
-  -webkit-text-fill-color: inherit !important;
-}
-
-
-/* =====
-
-/* =====
-
-/* ===== Final: heart EXACTLY like cart (same circle 34px + same icon 16px) ===== */
-.product-card .product-img-wrap .wishlist-btn,
-.product-img-wrap .wishlist-btn{
-  width: 34px !important;
-  height: 34px !important;
-  min-width: 34px !important;
+.product-card .product-img-wrap .wishlist-btn i.ph-heart{
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transform: none !important;
-}
-.product-card .product-img-wrap .wishlist-btn i.ph-heart,
-.product-img-wrap .wishlist-btn i.ph-heart,
-.product-card .wishlist-btn i.ph-heart{
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
   font-size: 16px !important;
   line-height: 1 !important;
   transform: none !important;
   scale: 1 !important;
-  color: #4a0630 !important;
-  -webkit-text-fill-color: #4a0630 !important;
+  -webkit-text-fill-color: currentColor !important;
 }
-
-
-/* ===== Active: navy circle + ph-heart stays VISIBLE white ===== */
-.product-card .wishlist-btn.active,
-.product-img-wrap .wishlist-btn.active{
+.product-card .product-img-wrap .wishlist-btn:hover,
+.product-card .product-img-wrap .wishlist-btn.active{
   background: #4b082d !important;
   border-color: #4b082d !important;
-  color: #fff !important;
-}
-.product-card .wishlist-btn.active i.ph-heart,
-.product-img-wrap .wishlist-btn.active i.ph-heart,
-.wishlist-btn.active i.ph-heart{
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
+  color: #ffffff !important;
   transform: none !important;
+}
+.product-card .product-img-wrap .wishlist-btn:hover i.ph-heart,
+.product-card .product-img-wrap .wishlist-btn.active i.ph-heart{
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
-}
-.product-card .wishlist-btn.active::before,
-.product-img-wrap .wishlist-btn.active::before,
-.wishlist-btn.active::before{
-  content: none !important;
-  display: none !important;
-}
-
-
-/* ===== Hover: like cart — navy circle + white heart ===== */
-.product-card .wishlist-btn:hover,
-.product-img-wrap .wishlist-btn:hover{
-  background: #4b082d !important;
-  border-color: #4b082d !important;
-  color: #fff !important;
-  transform: none !important;
-}
-.product-card .wishlist-btn:hover i.ph-heart,
-.product-img-wrap .wishlist-btn:hover i.ph-heart,
-.wishlist-btn:hover i.ph-heart{
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  transform: none !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-.product-card .wishlist-btn:hover::before,
-.product-img-wrap .wishlist-btn:hover::before,
-.wishlist-btn:hover::before{
-  content: none !important;
-  display: none !important;
 }
