@@ -9951,3 +9951,56 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
 .product-card .wishlist-btn.active .quick-heart-svg{
   color: currentColor !important;
 }
+
+
+/* ===== Card heart mirrors the Milana modal heart exactly ===== */
+.product-card .product-img-wrap .wishlist-btn{
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border: 1px solid rgba(23,19,17,.1) !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.94) !important;
+  color: #4b082d !important;
+  box-shadow: 0 7px 20px rgba(23,19,17,.12) !important;
+  transform: none !important;
+}
+.product-card .product-img-wrap .wishlist-btn .quick-heart-svg{
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  overflow: visible !important;
+  color: inherit !important;
+}
+.product-card .product-img-wrap .wishlist-btn:hover,
+.product-card .product-img-wrap .wishlist-btn.active{
+  background: #4b082d !important;
+  border-color: #4b082d !important;
+  color: #ffffff !important;
+  transform: scale(1.08) !important;
+}
+.product-card .product-img-wrap .wishlist-btn:hover .quick-heart-svg,
+.product-card .product-img-wrap .wishlist-btn.active .quick-heart-svg{
+  color: #ffffff !important;
+}
+
+
+/* ===== Card heart: hide leftover text-heart pseudo (keep only the SVG) ===== */
+.product-card .product-img-wrap .wishlist-btn::before,
+.product-card .product-img-wrap .wishlist-btn::after,
+.product-card .wishlist-btn::before,
+.product-card .wishlist-btn::after{
+  content: none !important;
+  display: none !important;
+}
+
+
+/* ===== Card heart: slightly bigger (22px) ===== */
+.product-card .product-img-wrap .wishlist-btn .quick-heart-svg{
+  width: 22px !important;
+  height: 22px !important;
+}
