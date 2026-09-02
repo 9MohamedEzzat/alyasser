@@ -544,6 +544,13 @@ function getProductIdFromCard(card){
     return nameEl.getAttribute('data-en') || nameEl.getAttribute('data-id') || nameEl.textContent.trim();
 }
 
+// نص التلميح بتاع زرار القلب بلغة الموقع الحالية (بيتابع html[lang] اللي applyLanguage بيظبطه)
+function wishlistTooltipText(active){
+    var isArabic = document.documentElement.lang !== 'en';
+    if(active) return isArabic ? 'عرض المفضلة' : 'Browse Wishlist';
+    return isArabic ? 'أضف للمفضلة' : 'Add to Wishlist';
+}
+
 // Keep every product-card heart synchronized with the shared localStorage wishlist.
 function syncProductWishlistButtons(){
     document.querySelectorAll('.product-card .wishlist-btn').forEach(function(btn){
@@ -552,7 +559,7 @@ function syncProductWishlistButtons(){
         const active = !!id && isInWishlist(id);
         const icon = btn.querySelector('i');
         btn.classList.toggle('active', active);
-        btn.setAttribute('data-tooltip', active ? 'Browse Wishlist' : 'Add to Wishlist');
+        btn.setAttribute('data-tooltip', wishlistTooltipText(active));
         if(icon){
             icon.classList.toggle('ph-fill', active);
         }
@@ -597,7 +604,7 @@ btn.classList.add('active');
     }
 
     saveWishlist(list);
-    btn.setAttribute('data-tooltip', list.some(function(item){ return item.id === id; }) ? 'Browse Wishlist' : 'Add to Wishlist');
+    btn.setAttribute('data-tooltip', wishlistTooltipText(list.some(function(item){ return item.id === id; })));
     updateWishlistCount();
     syncProductWishlistButtons();
 }
@@ -606,7 +613,7 @@ btn.classList.add('active');
 document.querySelectorAll('.product-card .wishlist-btn').forEach(function(btn){
     const card = btn.closest('.product-card');
     const id = card ? getProductIdFromCard(card) : null;
-    btn.setAttribute('data-tooltip', btn.classList.contains('active') ? 'Browse Wishlist' : 'Add to Wishlist');
+    btn.setAttribute('data-tooltip', wishlistTooltipText(btn.classList.contains('active')));
     if(id && isInWishlist(id)){
         btn.classList.add('active');
         const icon = btn.querySelector('i');
@@ -883,7 +890,7 @@ document.addEventListener('click',function(e){
         if(!btn)return;
         const item=window.quickProductForOptions;
         const active=item ? wishlistHas(item.id) : btn.classList.contains('active');
-        btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',active?'true':'false');btn.setAttribute('data-tooltip',active?'Browse Wishlist':'Add to Wishlist');renderQuickHeartIcon(btn,active);
+        btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',active?'true':'false');btn.setAttribute('data-tooltip',wishlistTooltipText(active));renderQuickHeartIcon(btn,active);
     }
     function toggleQuickHeart(){
         const btn=document.querySelector('#quickShopOverlay .quick-wishlist, .quick-shop-overlay .quick-wishlist');
@@ -935,7 +942,7 @@ document.addEventListener('click',function(e){
     const observer=new MutationObserver(function(){
         if(originalOpen?.classList.contains('active')){
             const modal=originalOpen.querySelector('.quick-shop-actions');
-            if(modal && !modal.querySelector('.quick-wishlist')){const b=document.createElement('button');b.className='quick-wishlist';b.type='button';b.setAttribute('aria-label','Add to wishlist');b.setAttribute('data-tooltip','Add to Wishlist');b.innerHTML='<svg class="quick-heart-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>';modal.appendChild(b)}
+            if(modal && !modal.querySelector('.quick-wishlist')){const b=document.createElement('button');b.className='quick-wishlist';b.type='button';b.setAttribute('aria-label','Add to wishlist');b.setAttribute('data-tooltip',wishlistTooltipText(false));b.innerHTML='<svg class="quick-heart-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>';modal.appendChild(b)}
             selectedQuickSize='44';updateSizeLabel();setQuickHeart();
         }
     });
