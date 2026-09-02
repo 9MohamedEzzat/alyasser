@@ -44,7 +44,7 @@
   <div class="promo-bar" data-ar="لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط" data-en="Limited time: Up to 20% off for 3 days only">لفترة محدودة: خصومات حتى 20% لمدة 3 أيام فقط</div>
   <header class="cart-page-header">
     <a href="index.html" class="cart-page-back"><i class="ph ph-arrow-right"></i> <span data-ar="العودة للتسوق" data-en="Continue shopping">العودة للتسوق</span></a>
-    <a href="index.html" class="cart-page-logo"><img src="assets/img/loge.webp" alt="ALYASSER logo"></a>
+    <a href="index.html" class="cart-page-logo"><img loading="lazy" src="assets/img/loge.webp" alt="ALYASSER logo"></a>
     <span class="cart-page-header-spacer" aria-hidden="true"></span>
   </header>
   <main class="cart-page-main">
@@ -83,7 +83,7 @@
           subtotal+=Number(item.price||0)*Number(item.qty||1);
           const row=document.createElement('article'); row.className='cart-page-item';
           const en=document.documentElement.lang==='en';
-          row.innerHTML='<img src="'+(item.img||'')+'" alt=""><div class="cart-page-item-info"><h2>'+(en?(item.nameEn||item.nameAr||'Product'):(item.nameAr||item.nameEn||'منتج'))+'</h2><p>'+money(item.price)+'</p><small>'+(en?'Size: ':'المقاس: ')+(item.size||'44')+'</small><div class="cart-page-qty"><button data-action="minus" data-index="'+index+'">−</button><span>'+(item.qty||1)+'</span><button data-action="plus" data-index="'+index+'">+</button></div></div><button class="cart-page-remove" data-action="remove" data-index="'+index+'" aria-label="'+(en?'Remove':'حذف')+'"><i class="ph ph-trash"></i></button>';
+          row.innerHTML='<img loading="lazy" src="'+(item.img||'')+'" alt=""><div class="cart-page-item-info"><h2>'+(en?(item.nameEn||item.nameAr||'Product'):(item.nameAr||item.nameEn||'منتج'))+'</h2><p>'+money(item.price)+'</p><small>'+(en?'Size: ':'المقاس: ')+(item.size||'44')+'</small><div class="cart-page-qty"><button data-action="minus" data-index="'+index+'">−</button><span>'+(item.qty||1)+'</span><button data-action="plus" data-index="'+index+'">+</button></div></div><button class="cart-page-remove" data-action="remove" data-index="'+index+'" aria-label="'+(en?'Remove':'حذف')+'"><i class="ph ph-trash"></i></button>';
           list.appendChild(row);
         });
         const has=cart.length>0; empty.hidden=has; content.hidden=!has;
