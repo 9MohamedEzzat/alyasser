@@ -9875,3 +9875,22 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
   }
 }
 
+
+
+/* ==== FINAL: settle product card icons for ALL viewports (fix mobile mess) ==== */
+.product-card .product-img-wrap{ position:relative !important; display:block !important; overflow:hidden !important; }
+.product-card .product-img-wrap > .wishlist-btn{ position:absolute !important; top:10px !important; right:10px !important; left:auto !important; bottom:auto !important; width:34px !important; height:34px !important; margin:0 !important; z-index:20 !important; }
+.product-card .product-img-wrap > .product-cart-icon, .product-card .product-img-wrap > .quick-shop-btn.product-cart-icon{ position:absolute !important; bottom:10px !important; right:10px !important; left:auto !important; top:auto !important; width:36px !important; height:36px !important; margin:0 !important; z-index:20 !important; background:#171311 !important; color:#fff !important; border:none !important; }
+.product-card .product-img-wrap > .quick-shop-btn.product-cart-icon i{ color:#fff !important; }
+
+/* keep name/price in normal flow under the image (never over it) */
+.product-card .product-name-link{ position:relative !important; z-index:auto !important; margin-top:12px !important; display:block !important; }
+.product-card .product-name{ margin:0 !important; padding:0 !important; }
+.product-card .product-price{ margin:6px 0 10px !important; padding:0 !important; position:relative !important; }
+.product-card .color-swatches{ position:relative !important; z-index:auto !important; margin-top:2px !important; }
+
+@media (max-width: 767px){
+  .product-card .product-img-wrap > .wishlist-btn{ top:8px !important; right:8px !important; width:30px !important; height:30px !important; }
+  .product-card .product-img-wrap > .product-cart-icon{ bottom:8px !important; right:8px !important; width:32px !important; height:32px !important; }
+  .product-card .product-img-wrap > .wishlist-btn::before{ font-size:20px !important; line-height:28px !important; }
+}
