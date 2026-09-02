@@ -9909,17 +9909,27 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
 }
 
 
-/* ===== Wishlist active: navy fill outline heart stays empty ===== */
+/* ===== Wishlist active: navy circle, empty premium heart WHITE always visible ===== */
 .product-card .wishlist-btn.active{
   background: #4b082d !important;
   border-color: #4b082d !important;
   color: #fff !important;
 }
+.product-card .wishlist-btn.active i{
+  display: none !important;
+}
 .product-card .wishlist-btn.active::before{
   content: "
 ♡
 " !important;
-  color: #fff !important;
+  display: block !important;
+  font-family: Arial, sans-serif !important;
+  font-weight: 400 !important;
   font-size: 26px !important;
   line-height: 1 !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: auto !important;
 }
