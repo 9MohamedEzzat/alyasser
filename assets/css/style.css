@@ -9908,49 +9908,46 @@ html[dir="rtl"] .cart-drawer.active{right:0!important;left:auto!important}
 }
 
 
-/* ===== Clean final: heart card matches cart exactly =====
-   Note: ph-heart renders its glyph via <i>::before, so we only tune
-   the <i> box/font; we never kill the icon's own ::before.            ===== */
-.product-card .product-img-wrap .wishlist-btn,
-.home-page .product-img-wrap > .wishlist-btn{
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  left: auto !important;
-  z-index: 20 !important;
+/* ===== Hide heart tooltip text on hover ===== */
+.product-card .wishlist-btn::after,
+.wishlist-btn::after,
+.quick-wishlist::after,
+#quickShopOverlay .quick-wishlist::after{
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ===== Fix: heart glyph was 28px inside a 34px circle (almost no padding),
+   so it looked oversized/distorted next to the cart icon. Shrink it down and
+   center it properly, same as the other card icon. ===== */
+.product-card .wishlist-btn,
+.quick-wishlist {
   width: 34px !important;
   height: 34px !important;
-  min-width: 34px !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 1px solid rgba(23,19,17,.1) !important;
-  border-radius: 50% !important;
-  background: rgba(255,255,255,.94) !important;
-  color: #4a0630 !important;
-  box-shadow: 0 7px 20px rgba(23,19,17,.12) !important;
-  transform: none !important;
 }
-.product-card .product-img-wrap .wishlist-btn i.ph-heart{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+.product-card .wishlist-btn::before,
+.quick-wishlist::before,
+.product-card .wishlist-btn.active::before,
+.quick-wishlist.active::before {
   font-size: 16px !important;
-  line-height: 1 !important;
-  transform: none !important;
-  scale: 1 !important;
-  -webkit-text-fill-color: currentColor !important;
+  line-height: 34px !important;
 }
-.product-card .product-img-wrap .wishlist-btn:hover,
-.product-card .product-img-wrap .wishlist-btn.active{
-  background: #4b082d !important;
-  border-color: #4b082d !important;
-  color: #ffffff !important;
-  transform: none !important;
+
+/* ===== Card heart now uses the premium SVG heart (same as quick-shop modal) ===== */
+.product-card .wishlist-btn .quick-heart-svg{
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  overflow: visible !important;
+  color: #4a0630 !important;
 }
-.product-card .product-img-wrap .wishlist-btn:hover i.ph-heart,
-.product-card .product-img-wrap .wishlist-btn.active i.ph-heart{
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+.product-card .wishlist-btn .quick-heart-svg path{
+  vector-effect: non-scaling-stroke;
+}
+.product-card .wishlist-btn:hover .quick-heart-svg,
+.product-card .wishlist-btn.active .quick-heart-svg{
+  color: currentColor !important;
 }
